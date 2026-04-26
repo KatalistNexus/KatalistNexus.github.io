@@ -3,108 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KATALİST Nexus: Eskişehir'in Entelektüel Sermaye ve Girişimcilik İstasyonu. Yusuf ve İsa tarafından kurulan bağımsız ağ.">
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path fill=%22%231a1a1a%22 d=%22M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z%22/></svg>">
-    
     <title>KATALİST Nexus | Eskişehir</title>
     <style>
-        /* --- TEMA VE RENKLER --- */
+        /* --- 3 FARKLI TEMA SİSTEMİ --- */
+        /* 1. Aydınlık Tema (Varsayılan - Gümüş ve Kemik) */
         :root {
-            --bg-color: #c0c0c0;
-            --card-bg: #f5f5dc; /* Kemik Rengi */
+            --bg-primary: #d6d6d6;
+            --bg-secondary: #f5f5dc; /* Kemik */
             --text-color: #1a1a1a;
-            --nav-bg: #d6d6d6;
+            --nav-bg: #c0c0c0;
             --gear-color: #1a1a1a;
             --accent: #555;
-            --switch-bg: #aaa;
         }
+        /* 2. Karanlık Tema (Lacivert ve Altın) */
         [data-theme="dark"] {
-            --bg-color: #0a192f; /* Lacivert */
-            --card-bg: #8b5a2b; /* Altınımsı Kahve */
+            --bg-primary: #0a192f;
+            --bg-secondary: #b8860b; /* Altın/Bronz Kahve */
             --text-color: #f0f0f0;
-            --nav-bg: #061121;
+            --nav-bg: #020c1b;
             --gear-color: #d4af37;
             --accent: #ffcc00;
-            --switch-bg: #333;
+        }
+        /* 3. Doğa Teması (Koyu Yeşil ve Kahverengi) */
+        [data-theme="nature"] {
+            --bg-primary: #1e2b22; /* Koyu Orman Yeşili */
+            --bg-secondary: #4a3728; /* Toprak Kahvesi */
+            --text-color: #e8e6d9;
+            --nav-bg: #141e17;
+            --gear-color: #2e3b32;
+            --accent: #8f9779;
         }
 
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; transition: all 0.4s ease; overflow-x: hidden; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 10; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; transition: background 0.5s, color 0.5s; overflow-x: hidden; }
+        
+        /* --- KESİNTİSİZ BÖLÜM TASARIMI (SIFIR BOŞLUK) --- */
+        .section {
+            padding: 100px 20px;
+            margin: 0; /* BOŞLUKLAR KALDIRILDI */
+            position: relative;
+            z-index: 10;
+        }
+        /* Bölümlerin arka planları sırayla değişsin ki jilet gibi dursun */
+        .section:nth-child(odd) { background-color: var(--bg-primary); }
+        .section:nth-child(even) { background-color: var(--bg-secondary); }
+        /* Altın temada yazılar okunsun diye özel ayar */
+        [data-theme="dark"] .section:nth-child(even) { color: #1a1a1a; }
+        [data-theme="dark"] .section:nth-child(even) h1, [data-theme="dark"] .section:nth-child(even) h2 { border-color: #1a1a1a; }
 
-        /* --- PRELOADER --- */
-        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
-        .spinner-gear { width: 60px; height: 60px; fill: var(--text-color); animation: spin 2s linear infinite; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .content-box { max-width: 1000px; margin: 0 auto; }
+        
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
+        h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 15px; font-size: 2.2em; margin-top: 0; }
+        p { font-size: 1.15em; text-align: justify; margin-bottom: 25px; }
 
-        /* --- NAVBAR --- */
-        nav { background: var(--nav-bg); padding: 15px 20px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-logo { font-weight: bold; letter-spacing: 4px; font-size: 1.3em; text-align: center; flex-grow: 1; }
-        .menu-icon { font-size: 28px; cursor: pointer; color: var(--text-color); }
+        /* --- NAVBAR & LOGO --- */
+        nav { background: var(--nav-bg); padding: 15px 30px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.5s; }
+        .nav-logo { font-weight: bold; letter-spacing: 5px; font-size: 1.5em; flex-grow: 1; text-align: center; }
+        .menu-icon { font-size: 32px; cursor: pointer; color: var(--text-color); }
+        .main-logo { max-width: 250px; display: block; margin: 0 auto 30px auto; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4)); }
 
-        /* --- IŞIK ANAHTARI TEMA KONTROLÜ --- */
-        .switch-container { display: flex; flex-direction: column; align-items: center; width: 40px; }
-        .switch-label { font-size: 9px; font-weight: bold; margin-bottom: 3px; letter-spacing: 1px;}
-        .switch { position: relative; width: 24px; height: 50px; background-color: var(--switch-bg); border-radius: 12px; cursor: pointer; transition: 0.4s; border: 2px solid var(--text-color); }
-        .switch::before { content: ""; position: absolute; width: 18px; height: 18px; border-radius: 50%; background-color: var(--card-bg); bottom: 3px; left: 3px; transition: 0.4s; }
-        [data-theme="dark"] .switch::before { transform: translateY(-26px); background-color: var(--accent); }
+        /* --- TEMA BUTONU --- */
+        .theme-btn { background: transparent; border: 2px solid var(--text-color); color: var(--text-color); padding: 8px 20px; font-weight: bold; border-radius: 25px; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+        .theme-btn:hover { background: var(--text-color); color: var(--bg-primary); }
 
         /* --- SIDEBAR --- */
-        .sidebar { position: fixed; top: 0; right: -300px; width: 250px; height: 100vh; background: var(--card-bg); box-shadow: -5px 0 15px rgba(0,0,0,0.2); z-index: 1000; transition: 0.4s ease; padding: 30px 20px; display: flex; flex-direction: column; gap: 10px; border-left: 2px solid var(--text-color); }
+        .sidebar { position: fixed; top: 0; right: -350px; width: 300px; height: 100vh; background: var(--bg-secondary); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 1000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px 30px; display: flex; flex-direction: column; gap: 15px; border-left: 3px solid var(--text-color); overflow-y: auto;}
         .sidebar.active { right: 0; }
-        .close-btn { align-self: flex-end; font-size: 24px; cursor: pointer; color: var(--text-color); }
-        .sidebar a, .sidebar button { text-decoration: none; color: var(--text-color); font-size: 1em; font-weight: bold; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 12px 0; background: none; border: none; text-align: left; cursor: pointer; }
-        .sidebar .highlight-btn { background: var(--text-color); color: var(--bg-color); padding: 10px; text-align: center; border-radius: 5px; margin-bottom: 10px; }
+        .close-btn { align-self: flex-end; font-size: 30px; cursor: pointer; font-weight:bold; color: var(--text-color); }
+        .sidebar a, .sidebar button { text-decoration: none; color: inherit; font-size: 1.1em; font-weight: bold; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; background: none; border-top:none; border-left:none; border-right:none; text-align: left; cursor: pointer; transition: 0.3s; }
+        .sidebar a:hover { padding-left: 10px; color: var(--accent); }
+        .highlight-btn { background: var(--text-color) !important; color: var(--bg-secondary) !important; padding: 15px; text-align: center !important; border-radius: 8px; margin-bottom: 10px; display:block; text-decoration:none; font-weight:bold; font-size:1.2em !important;}
 
-        /* --- İÇERİK & ANİMASYON --- */
-        .section { background: var(--card-bg); padding: 40px; border-radius: 15px; margin: 30px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; z-index: 10; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        h1, h2, h3 { text-transform: uppercase; letter-spacing: 1px; }
-        h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 10px; }
-        .feature-img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin: 20px 0; border: 2px solid var(--text-color); }
-
-        /* --- SSS AKORDİYON --- */
-        .accordion { background: transparent; color: var(--text-color); cursor: pointer; padding: 15px; width: 100%; text-align: left; border: 1px solid var(--text-color); border-radius: 5px; margin-top: 10px; font-weight: bold; font-size: 0.95em; }
-        .accordion:hover { background: var(--text-color); color: var(--card-bg); }
-        .panel { padding: 0 15px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-
-        /* --- MODAL (GİRİŞİMCİYİM) --- */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; display: none; justify-content: center; align-items: center; }
-        .modal { background: var(--card-bg); padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; color: var(--text-color); border: 2px solid var(--text-color); }
-        .modal input, .modal textarea { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); box-sizing: border-box; }
-        .modal button { background: var(--text-color); color: var(--bg-color); padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
-
-        /* --- 15 ADET ARKA PLAN ÇARKI --- */
-        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.12; }
+        /* --- 15 ÇARK --- */
+        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.15; }
         .gear { position: absolute; fill: var(--gear-color); transition: transform 0.1s linear; }
-        .gear-lg { width: 480px; height: 480px; }
-        .gear-md { width: 300px; height: 300px; }
-        .gear-sm { width: 180px; height: 180px; }
-        
-        #bg-gear1 { top: -100px; left: -100px; } #bg-gear2 { top: 220px; left: 300px; } #bg-gear3 { top: -50px; left: 650px; }
-        #bg-gear4 { top: 450px; left: -80px; } #bg-gear5 { top: 650px; left: 220px; } #bg-gear6 { top: 550px; left: 580px; }
-        #bg-gear7 { top: 120px; right: -100px; } #bg-gear8 { bottom: -120px; left: -120px; } #bg-gear9 { bottom: 180px; left: 280px; }
-        #bg-gear10 { bottom: -60px; left: 550px; } #bg-gear11 { bottom: 220px; right: 120px; } #bg-gear12 { top: 380px; left: 850px; }
-        #bg-gear13 { bottom: 450px; left: 120px; } #bg-gear14 { top: 80px; left: 220px; } #bg-gear15 { bottom: 80px; right: -60px; }
+        .gear-lg { width: 550px; height: 550px; } .gear-md { width: 350px; height: 350px; } .gear-sm { width: 200px; height: 200px; }
+        #bg-gear1 { top: -100px; left: -100px; } #bg-gear2 { top: 220px; left: 300px; } #bg-gear3 { top: -50px; left: 650px; } #bg-gear4 { top: 450px; left: -80px; } #bg-gear5 { top: 650px; left: 220px; } #bg-gear6 { top: 550px; left: 580px; } #bg-gear7 { top: 120px; right: -100px; } #bg-gear8 { bottom: -120px; left: -120px; } #bg-gear9 { bottom: 180px; left: 280px; } #bg-gear10 { bottom: -60px; left: 550px; } #bg-gear11 { bottom: 220px; right: 120px; } #bg-gear12 { top: 380px; left: 850px; } #bg-gear13 { bottom: 450px; left: 120px; } #bg-gear14 { top: 80px; left: 220px; } #bg-gear15 { bottom: 80px; right: -60px; }
 
-        /* --- BUTONLAR VE ALT BİLGİ --- */
-        #backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: transparent; border: none; cursor: pointer; z-index: 101; display: none; }
-        #backToTop svg { width: 100%; height: 100%; fill: var(--text-color); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
-        .contact-float { position: fixed; bottom: 30px; left: 30px; background: var(--text-color); color: var(--card-bg); padding: 12px 22px; border-radius: 30px; font-weight: bold; text-decoration: none; z-index: 101; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: 0.3s; }
-        
-        .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--text-color); color: var(--bg-color); padding: 15px; text-align: center; z-index: 1000; display: flex; justify-content: space-around; align-items: center; box-sizing: border-box; }
-        .cookie-banner button { background: var(--bg-color); color: var(--text-color); border: none; padding: 8px 18px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        /* --- ALT BİLGİ & LOKASYON --- */
+        footer { text-align: center; padding: 60px 20px; background: var(--nav-bg); color: var(--text-color); font-weight: bold; position: relative; z-index: 10; border-top: 3px solid var(--text-color); }
+        .footer-social a { color: inherit; text-decoration: none; margin: 0 15px; font-size:1.2em; border-bottom: 2px solid transparent; transition: 0.3s; }
+        .footer-social a:hover { border-bottom: 2px solid var(--text-color); }
+        .location { margin-top: 30px; font-size: 1.1em; letter-spacing: 2px; opacity: 0.8; }
+        .location svg { width: 20px; vertical-align: middle; fill: var(--text-color); margin-right: 5px; }
 
-        footer { text-align: center; padding: 60px 0 140px; color: var(--text-color); font-weight: bold; position: relative; z-index: 10; }
-        .footer-social a { color: var(--text-color); text-decoration: none; margin: 0 10px; border-bottom: 1px solid var(--text-color); padding-bottom: 2px; }
+        #backToTop { position: fixed; bottom: 40px; right: 40px; width: 60px; height: 60px; background: transparent; border: none; cursor: pointer; z-index: 101; display: none; }
+        #backToTop svg { width: 100%; height: 100%; fill: var(--text-color); filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5)); transition: 0.3s; }
+        #backToTop:hover svg { transform: rotate(90deg); }
+        .contact-float { position: fixed; bottom: 40px; left: 40px; background: var(--text-color); color: var(--bg-primary); padding: 15px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; z-index: 101; box-shadow: 0 5px 15px rgba(0,0,0,0.5); font-size: 1.1em; transition: 0.3s; }
+        .contact-float:hover { transform: translateY(-5px); }
     </style>
 </head>
-<body>
-
-<div id="preloader">
-    <svg class="spinner-gear" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-</div>
+<body data-theme="dark">
 
 <div class="bg-gears">
     <svg id="bg-gear1" class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
@@ -125,117 +115,136 @@
 </div>
 
 <nav>
-    <div class="switch-container">
-        <span class="switch-label">TEMA</span>
-        <div class="switch" onclick="toggleTheme()"></div>
-    </div>
+    <button class="theme-btn" onclick="cycleTheme()">TEMA DEĞİŞTİR</button>
     <div class="nav-logo">KATALİST NEXUS</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div id="sideMenu" class="sidebar">
     <div class="close-btn" onclick="toggleMenu()">✕</div>
-    <button class="highlight-btn" onclick="openModal()">🚀 GİRİŞİMCİYİM</button>
-    <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn Sayfamız</a>
+    <a href="test.html" class="highlight-btn">🔍 Girişimci Miyim? (Test)</a>
     <a href="#girisimci-nedir" onclick="toggleMenu()">Girişimci Nedir?</a>
-    <a href="#sss-bolumu" onclick="toggleMenu()">Sıkça Sorulan Sorular</a>
-    <a href="mailto:nexuskatalist@gmail.com">Bize Ulaşın</a>
-</div>
-
-<div class="container">
-    <div class="section reveal" style="text-align: center;">
-        <h1>KATALİST NEXUS</h1>
-        <p style="font-size: 1.2em;">Eskişehir'in Entelektüel Girişimcilik Fabrikası</p>
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Mekanik Mühendislik" class="feature-img">
-    </div>
-
-    <div id="girisimci-nedir" class="section reveal">
-        <h2>Girişimcilik Disiplini</h2>
-        <p>Girişimcilik; mevcut bir problemi fark edip bu probleme yenilikçi çözüm üretme sanatıdır. Tıpkı arka plandaki dişliler gibi, tüm disiplinlerin senkronize çalışmasıyla başarıya ulaşılır.</p>
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Ekip Çalışması" class="feature-img">
-    </div>
-
-    <div id="sss-bolumu" class="section reveal">
-        <h2>Sıkça Sorulan Sorular</h2>
-        <button class="accordion">Toplantılar ne zaman yapılıyor?</button>
-        <div class="panel">
-            <p>Ağustos 2025'ten beri her hafta lokasyonu gizli tutulan özel buluşmalar gerçekleştiriyoruz.</p>
-        </div>
-        <button class="accordion">Ağa nasıl dahil olabilirim?</button>
-        <div class="panel">
-            <p>"Girişimciyim" formunu doldurarak veya LinkedIn üzerinden bize ulaşarak başvurunuzu iletebilirsiniz.</p>
-        </div>
+    <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda (Yusuf & İsa)</a>
+    <a href="#vizyonumuz" onclick="toggleMenu()">Vizyonumuz</a>
+    <a href="#gizlilik" onclick="toggleMenu()">Gizlilik Politikası</a>
+    <div style="margin-top: 20px; border-top: 1px solid var(--text-color); padding-top: 20px;">
+        <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/share/1CnTMVgB8d/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/thenexuscorps?igsh=MWsyc2J2aHh1emVheA==" target="_blank">Instagram</a>
+        <a href="mailto:nexuskatalist@gmail.com">Bize Ulaşın (Mail)</a>
     </div>
 </div>
 
-<div id="girisimciModal" class="modal-overlay">
-    <div class="modal">
-        <h2 style="margin-top: 0;">Fikrini Ateşle</h2>
-        <input type="text" placeholder="İsim Soyisim">
-        <input type="email" placeholder="E-Posta Adresiniz">
-        <textarea rows="4" placeholder="Girişim Fikriniz..."></textarea>
-        <button onclick="closeModal()">GÖNDER (Yakında Aktif)</button>
-        <button onclick="closeModal()" style="background: transparent; border: 1px solid var(--text-color); color: var(--text-color);">Kapat</button>
+<div class="section" style="text-align: center; padding-top: 60px;">
+    <div class="content-box">
+        <img src="logo.png" alt="KATALİST Logo" class="main-logo">
+        <h1 style="font-size: 3em; margin: 0;">KATALİST NEXUS</h1>
+        <p style="text-align: center; font-size: 1.5em; font-weight: bold; opacity: 0.9;">Eskişehir'in Entelektüel Girişimcilik Fabrikası</p>
     </div>
 </div>
 
-<a href="mailto:nexuskatalist@gmail.com" class="contact-float">✉ Mail Atın</a>
+<div id="girisimci-nedir" class="section">
+    <div class="content-box">
+        <h2>Girişimci Nedir? Acımasız Bir Analiz</h2>
+        <p>Girişimcilik, modern çağın en çok suistimal edilen kelimelerinden biridir. "Girişimci" sadece bir vergi levhası sahibi olmak veya afili bir kartvizit bastırıp LinkedIn'de "CEO" unvanı kullanmak demek değildir. Gerçek bir girişimci; mevcut, kanayan bir problemi fark edip, bu probleme piyasanın henüz göremediği yenilikçi, inovatif ve ölçeklenebilir bir çözüm üreten kişidir.</p>
+        <p>Sıradan insanlar bir sorunla karşılaştıklarında şikayet ederler, sistemi suçlarlar. Girişimciler ise o sorunun içinde saklı olan ekonomik değeri, iyileştirme potansiyelini görürler. Statükoya meydan okumak, kuralları yıkıp daha iyisini inşa etmek onların DNA'sında vardır. Onlar dünyayı olduğu gibi değil, "olması gerektiği gibi" gören vizyonerlerdir.</p>
+        
+        <h3>Motivasyon Mu, Disiplin Mi?</h3>
+        <p>Eğer girişimcilik yolculuğunuza sadece "motive olduğunuz" günler güvenerek çıkıyorsanız, daha ilk virajda kaybettiniz demektir. Motivasyon, bir arabanın marşına basan o ilk, güçlü kıvılcımdır; ancak sizi binlerce kilometrelik hedefe, fırtınalı yollardan ulaştıracak olan şey o arabanın yakıtıdır, yani <b>Disiplindir</b>.</p>
+        <p>Gerçek girişimciler, canlarının hiç çalışmak istemediği, her şeyin ters gittiği, yatırımcıların yüzlerine kapıları kapattığı o karanlık günlerde bile masaya oturup işini yapan insanlardır. Amatörler ilham perisini bekler, modlarının yükselmesini umarlar. Profesyoneller ise sabah 6'da alarm çaldığında, bahaneleri bir kenara bırakıp ayağa kalkar. Unutmayın: Disiplin, motivasyonun bittiği yerde başlar ve sizi rakiplerinizden ayıran tek gerçek çizgidir.</p>
+
+        <h3>Başarılı Girişimcilerin Gizli Formülü</h3>
+        <p>Milyar dolarlık vizyonlara imza atan veya yerel bir pazarı tamamen domine eden başarılı girişimcilerin, dışarıdan bakıldığında birbirinden çok farklı görünseler de, zihinsel mutfaklarında ortak bir "kod" kullandıklarını görürüz:</p>
+        <ul style="font-size: 1.15em; line-height: 1.8;">
+            <li><b>Fikir Değil, İcraat (Execution) Odaklılık:</b> Mükemmel fikir diye bir şey yoktur, mükemmel icraat vardır. Dünyanın en iyi fikri, onu hayata geçirebilecek operasyonel yeteneğiniz yoksa bir hiçtir.</li>
+            <li><b>Çeviklik ve Pivot Etme Yeteneği:</b> Pazar, sizin Excel tablolarınızdaki kusursuz planlara uymak zorunda değildir. Planlar çöktüğünde veya müşteri farklı bir şey talep ettiğinde, anında yön değiştirebilenler (Pivot) hayatta kalır.</li>
+            <li><b>Yılmazlık (Resilience):</b> Reddedilmeye ve başarısızlığa olan töleransları insanüstüdür. Başarısızlığı bir son olarak değil, sadece "Bu yöntemin işe yaramadığını öğrendim" şeklinde bir akademik veri olarak okurlar.</li>
+            <li><b>Multidisipliner Merak:</b> Sadece kendi sektörlerini okumazlar. Bir yazılımcı, psikoloji kitapları okur; bir şef, mühendislik mimarisi inceler. Yenilik, farklı disiplinlerin tam kesişim noktasından doğar.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="hakkimizda" class="section">
+    <div class="content-box">
+        <h2>Hakkımızda: İki Genç, Tek Bir Vizyon</h2>
+        <p>Ağustos 2025'ten bu yana Eskişehir'de devrim yaratan <b>KATALİST Nexus</b> ağı, henüz 19 yaşında olmalarına rağmen ekosistemin bizzat mutfağında yoğrulan iki vizyoner tarafından kuruldu: <b>Yusuf ve İsa.</b></p>
+        <p>Birçoğu onların yaşındayken sadece vizelere çalışıp kafelerde vakit öldürürken, onlar girişimcilik ekosisteminin içine dalmış, piyasadaki "entelektüel sığlığı" ve "taklitçi" zihniyeti birinci elden tecrübe etmişlerdi. Eskişehir, devasa bir öğrenci nüfusuna ve potansiyele sahip olmasına rağmen, bu potansiyel basit fikirlerin ötesine geçemiyordu. Yusuf ve İsa, "Keşke daha derinlikli bir ortam olsa" diyerek şikayet etmek yerine, o ortamı kendi elleriyle inşa etmeye karar verdiler.</p>
+        <p>Bu ağın temelinde yatan sır, kurucuların çok yönlü disiplinlerinden gelir. Bir yanda 400 derecelik fırınların basıncı altında neapolitan pizza çıkaran, moleküler gastronominin matematiğiyle uğraşan profesyonel bir mutfak disiplini; diğer yanda Hat ve Naht gibi geleneksel sanatların gerektirdiği milimetrik sabır ve odaklanma... İşte Katalist Nexus, bu farklı dünyaların, kusursuz bir girişimcilik motoruna dönüşmüş halidir.</p>
+        <p>Bizler sadece bir şirket kurmadık; yetenekli ama yönünü bulamamış zihinleri bir araya getiren, onlara bir ivme (katalizör) kazandıran devasa bir makine inşa ettik.</p>
+    </div>
+</div>
+
+<div id="vizyonumuz" class="section">
+    <div class="content-box">
+        <h2>Vizyonumuz: Yeni Bir Medeniyet İnşası</h2>
+        <p>Katalist Nexus'un vizyonu, sıradan bir "kartvizit dağıtma" etkinliği veya yatırımcı kovalama platformu olmanın fersah fersah ötesindedir. Bizim vizyonumuz, Eskişehir'in gizli kalmış %1'lik entelektüel dilimini bulup çıkarmak ve onları somut, dünyayı değiştirebilecek projeler etrafında birleştirmektir.</p>
+        <p><b>Daha Önce Neden Yapılamadı?</b> Çünkü bu, inanılmaz bir filtreleme ve kalite standardı gerektirir. Bizler, fikirlerin tek başına büyümediğine inanırız. Bir yazılımcının kodları, bir tasarımcının ruhuyla; bir finansçının matematiği, bir pazarlamacının diliyle birleştiğinde ortaya gerçek "Girişimler" çıkar. Her hafta lokasyonu gizli tutulan, sadece özel davetle girilebilen toplantılarımızda beyin fırtınaları fırtınalara dönüşür.</p>
+        <p>Katalist'e katılan bir birey, sadece bir telefon rehberi dolusu numara elde etmez. Hayatı boyunca aradığı o "Co-founder"ı (Kurucu Ortak), teknik eksiklerini kapatacak o dehası veya fikrini milyonlara ulaştıracak o stratejisti bulur. Bizim vizyonumuz, Eskişehir'den globale uzanan, kırılmaz ve entelektüel bir "Nexus" (Bağlantı) ağı örmektir.</p>
+    </div>
+</div>
+
+<div id="gizlilik" class="section">
+    <div class="content-box">
+        <h2>Gizlilik Politikası ve Şartlar</h2>
+        <p>Katalist Nexus ("Biz", "Platform", "Ağ"), üyelerimizin ve web sitemizi ("Site") ziyaret eden kullanıcılarımızın gizliliğine ve kişisel verilerinin korunmasına en yüksek derecede önem vermektedir. Bu Gizlilik Politikası, global KVKK ve GDPR standartlarına uygun olarak, platformumuzda toplanan verilerin nasıl işlendiğini, saklandığını ve korunduğunu detaylandırmak amacıyla şeffaf bir şekilde hazırlanmıştır.</p>
+        
+        <h3>1. Toplanan Veriler ve Çerezler (Cookies)</h3>
+        <p>Sitemizi ziyaret ettiğinizde, sistem arka planımızdaki analiz araçları, size daha iyi bir kullanıcı deneyimi sunabilmek adına anonimleştirilmiş bazı verileri (IP adresi, tarayıcı türü, sitede geçirilen süre, etkileşimde bulunulan içerikler) otomatik olarak toplar. Sitemizde kullanılan çerezler (cookies), tamamen teknik altyapının sorunsuz çalışması ve "Karanlık Mod", "Doğa Modu" gibi tercihlerin cihazınızda hatırlanması amacıyladır. Çerez kullanımını tarayıcı ayarlarınızdan dilediğiniz zaman sınırlandırabilirsiniz.</p>
+
+        <h3>2. "Girişimci Miyim" Testi ve Başvuru Verileri</h3>
+        <p>Sitemiz üzerinden "Girişimci Miyim" testini çözdüğünüzde veya ileride aktif olacak başvuru formlarını doldurduğunuzda (İsim, Soyisim, E-Posta adresi, Girişim Fikri gibi) bizimle paylaştığınız tüm bilgiler, uçtan uca şifrelenmiş sunucularda saklanır. Özellikle "Girişim Fikriniz", ekosistemimizde fikri mülkiyetin (Intellectual Property) ne kadar hassas bir konu olduğunun bilinciyle, üçüncü şahıslarla, kurumlarla veya yatırımcı ağlarıyla <b>kesinlikle izniniz olmadan paylaşılmaz.</b></p>
+
+        <h3>3. Verilerin Kullanım Amacı</h3>
+        <p>Topladığımız kişisel veriler, yalnızca şu amaçlar için kullanılır:<br>
+        - Sizi Katalist Nexus gizli toplantılarına uygunluk açısından değerlendirmek.<br>
+        - İletişim adresiniz (nexuskatalist@gmail.com) üzerinden sizinle profesyonel yazışmalar gerçekleştirmek.<br>
+        - Platform içi eşleştirmeleri (örneğin; yazılımcı arayan bir girişimci ile projeye dahil olmak isteyen bir yazılımcıyı buluşturmak) tamamen sizin onayınıza tabi olarak koordine etmek.</p>
+
+        <h3>4. Veri Güvenliği ve İletişim</h3>
+        <p>Katalist Nexus, siber güvenlik önlemlerini sürekli güncel tutar. Verilerinizin silinmesini, güncellenmesini veya tamamen anonimleştirilmesini talep etme hakkına sahipsiniz. Veri politikalarımızla ilgili her türlü hukuki veya teknik talebiniz için kurucu yönetim ekibimizle <b>nexuskatalist@gmail.com</b> adresi üzerinden 7/24 iletişime geçebilirsiniz. Tüm talepleriniz en geç 48 saat içerisinde işleme alınacaktır.</p>
+    </div>
+</div>
+
+<a href="mailto:nexuskatalist@gmail.com" class="contact-float">✉ Bize Mail Atın</a>
 
 <button id="backToTop" onclick="scrollToTop()">
-    <svg viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+    <svg viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
 </button>
 
 <footer>
     <div class="footer-social">
         <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/share/1CnTMVgB8d/" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/thenexuscorps?igsh=MWsyc2J2aHh1emVheA==" target="_blank">Instagram</a>
     </div>
-    <p style="margin-top: 15px;">© 2026 KATALİST Nexus | nexuskatalist@gmail.com</p>
+    
+    <div class="location">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        ESKİŞEHİR, TÜRKİYE
+    </div>
+
+    <p style="margin-top: 25px; font-size:1.1em;">nexuskatalist@gmail.com</p>
+    <p style="opacity: 0.6;">© 2026 KATALİST Nexus | Tüm Hakları Saklıdır.</p>
 </footer>
 
 <script>
-    // Preloader Kapatma
-    window.addEventListener('load', () => {
-        const p = document.getElementById('preloader');
-        p.style.opacity = '0';
-        setTimeout(() => p.style.display = 'none', 500);
-    });
-
-    // Tema Değiştirme
-    function toggleTheme() {
-        const b = document.body;
-        b.getAttribute('data-theme') === 'dark' ? b.removeAttribute('data-theme') : b.setAttribute('data-theme', 'dark');
+    // 3'lü Tema Döngüsü (Aydınlık -> Karanlık -> Doğa)
+    const themes = ['light', 'dark', 'nature'];
+    let currentTheme = 1; // Default dark
+    function cycleTheme() {
+        currentTheme = (currentTheme + 1) % themes.length;
+        document.body.setAttribute('data-theme', themes[currentTheme]);
+        if(themes[currentTheme] === 'light') { document.body.removeAttribute('data-theme'); }
     }
 
-    // Menü ve Modal Fonksiyonları
     function toggleMenu() { document.getElementById("sideMenu").classList.toggle("active"); }
-    function openModal() { document.getElementById("girisimciModal").style.display = "flex"; toggleMenu(); }
-    function closeModal() { document.getElementById("girisimciModal").style.display = "none"; }
-
-    // Akordiyon
-    document.querySelectorAll(".accordion").forEach(acc => {
-        acc.onclick = function() {
-            this.classList.toggle("active");
-            let panel = this.nextElementSibling;
-            panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-        }
-    });
-
-    // Kaydırma Efektleri
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-
+    
+    // Çark ve Yukarı Çık Efekti
     window.onscroll = function() {
         const s = window.pageYOffset;
-        document.querySelectorAll('.gear').forEach((g, i) => {
-            let dir = (i % 2 === 0) ? 1 : -1;
-            g.style.transform = `rotate(${dir * (s / (3 + (i % 3)))}deg)`;
-        });
+        document.querySelectorAll('.gear').forEach((g, i) => { let dir = (i % 2 === 0) ? 1 : -1; g.style.transform = `rotate(${dir * (s / (3 + (i % 3)))}deg)`; });
         document.getElementById("backToTop").style.display = s > 400 ? "block" : "none";
     };
-
     function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 </script>
 
