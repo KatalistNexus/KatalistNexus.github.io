@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girişimci Miyim? | KATALİST Nexus</title>
+    <style>
+        :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --accent: #555; }
+        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
+        [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --accent: #8f9779; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; padding: 0; }
+        nav { background: var(--nav-bg); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .nav-logo { font-weight: bold; letter-spacing: 5px; font-size: 1.5em; text-decoration:none; color:var(--text-color);}
+        .container { max-width: 800px; margin: 60px auto; padding: 50px; background: var(--bg-secondary); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { text-align: center; border-bottom: 3px solid var(--text-color); padding-bottom: 20px; font-size: 2.2em; text-transform: uppercase; }
+        .question { margin-bottom: 40px; }
+        .question p { font-weight: bold; font-size: 1.2em; }
+        .options label { display: block; padding: 15px; margin: 10px 0; background: var(--bg-primary); border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; font-size: 1.1em; }
+        .options label:hover { border-color: var(--text-color); }
+        .btn { display: block; width: 100%; padding: 20px; background: var(--text-color); color: var(--bg-primary); font-size: 1.3em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-top: 30px; transition: 0.3s; text-transform: uppercase; }
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body data-theme="dark">
+
+<nav>
+    <a href="index.html" class="nav-logo">← KATALİST NEXUS'A DÖN</a>
+</nav>
+
+<div class="container">
+    <h1>Girişimci Miyim?</h1>
+    <p style="text-align:center; font-size: 1.2em; margin-bottom:50px;">Katalist Nexus vizyonuna uygunluğunuzu ölçmek için hazırladığımız 5 kritik soruyu yanıtlayın. Her soru 20 puan değerindedir.</p>
+    
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Aylarca kodladığınız/tasarladığınız bir ürünü piyasaya sürdünüz ama kimse satın almadı. İlk tepkiniz ne olur?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="20"> A) Müşteriden anında geri bildirim alıp ürünü pazarın istediği şekilde baştan aşağı değiştiririm (Pivot).</label>
+                <label><input type="radio" name="q1" value="10"> B) Pazarlama stratejimi değiştirir, insanları ürünüme ikna etmeye çalışırım.</label>
+                <label><input type="radio" name="q1" value="0"> C) Demek ki bu sektör bana göre değilmiş der, tüm projeyi kapatır normal işime dönerim.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Aklınıza dünyayı değiştirecek mükemmel bir fikir geldi. Stratejiniz nedir?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="0"> A) Fikrimi kimse çalmasın diye kimseye anlatmam, yıllarca gizli gizli mükemmelleştirmeye çalışırım.</label>
+                <label><input type="radio" name="q2" value="20"> B) Fikrin bir değeri olmadığını bilirim. Yarın sabah en ilkel haliyle (MVP) piyasada test etmeye başlarım.</label>
+                <label><input type="radio" name="q2" value="10"> C) Önce profesyonel bir şirket kurar, harika bir logo tasarlar, sonra işe başlarım.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Konfor alanınız (öngörülebilir maaş, garantili bir okul/meslek) hakkında ne düşünüyorsunuz?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="10"> A) Konfor alanımı korur, girişimciliği sadece hafta sonları hobi olarak yaparım.</label>
+                <label><input type="radio" name="q3" value="0"> B) Konfor alanı benim için her şeydir, düzenimin bozulması beni çok korkutur.</label>
+                <label><input type="radio" name="q3" value="20"> C) Konfor alanı potansiyelin mezarlığıdır. Gerekirse uykusuz ve parasız kalmayı göze alarak sınırları zorlarım.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Motivasyonunuzu tamamen kaybettiğiniz, işlerin kötü gittiği bir günde sizi masada tutan nedir?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="20"> A) Sarsılmaz disiplinim. Canım hiç istemese bile o gün yapılması gereken işi eksiksiz yaparım.</label>
+                <label><input type="radio" name="q4" value="0"> B) Motivasyonum yoksa çalışamam, ilham gelmesini ve modumun yükselmesini beklerim.</label>
+                <label><input type="radio" name="q4" value="10"> C) Motive edici videolar izler, kendimi gaza getirip öyle çalışmaya başlarım.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Kurucu Ortak (Co-founder) veya ekip ararken en çok neye dikkat edersiniz?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="0"> A) Benimle tartışmayacak, bana itaat edecek sadık yakın arkadaşlarımı seçerim.</label>
+                <label><input type="radio" name="q5" value="10"> B) Sadece teknik becerisi yüksek olanları (örneğin en iyi kod yazanları) seçerim, karakter önemli değildir.</label>
+                <label><input type="radio" name="q5" value="20"> C) Benden daha zeki, farklı disiplinlerden gelen ve bana mantıklı argümanlarla itiraz edebilecek kişileri seçerim.</label>
+            </div>
+        </div>
+
+        <button type="button" class="btn" onclick="calculateScore()">Testi Bitir ve Sonucu Analiz Et</button>
+    </form>
+</div>
+
+<script>
+    function calculateScore() {
+        let total = 0;
+        const form = document.forms["quizForm"];
+        let answered = 0;
+        for(let i=1; i<=5; i++) {
+            let q = form["q"+i];
+            for(let j=0; j<q.length; j++) {
+                if(q[j].checked) { total += parseInt(q[j].value); answered++; break; }
+            }
+        }
+        if(answered < 5) { alert("Sistemin analizi tamamlayabilmesi için lütfen tüm soruları yanıtlayın."); return; }
+
+        if(total >= 80) {
+            alert("Sistem Analizi: " + total + " PUAN\n\nSiz doğuştan bir 'ÖZEL GİRİŞİMCİSİNİZ'. \n\nRisk alma eşiğiniz, icraat odaklılığınız ve disiplin algınız %1'lik dilimde yer alıyor. Sizin gibi vizyonerlerin yeri tam olarak Katalist Nexus masalarıdır. Ana sayfaya dönüp bize hemen mail atın!");
+            window.location.href = "index.html";
+        } else {
+            alert("Sistem Analizi: " + total + " PUAN\n\nGirişimcilik potansiyeliniz var ancak pazar gerçekleri, disiplin ve icraat konularında geleneksel yanılgılara sahipsiniz. \n\nŞimdi sizi bu eksiklerinizi yüzünüze vuracak ve vizyonunuzu sarsacak özel araştırma sayfamıza yönlendiriyoruz...");
+            window.location.href = "bilgi.html";
+        }
+    }
+</script>
+</body>
+</html>
