@@ -32,14 +32,19 @@
 
         .main-logo { max-width: 250px; display: block; margin: 0 auto 30px auto; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4)); border-radius: 10px;}
 
-        .item-box { background: rgba(0,0,0,0.05); border-left: 5px solid var(--text-color); padding: 20px; margin-bottom: 20px; border-radius: 0 10px 10px 0; }
+        /* KUTUCUK TASARIMLARI (Her Film ve Kitap İçin) */
+        .item-box { background: rgba(0,0,0,0.05); border-left: 5px solid var(--text-color); padding: 25px; margin-bottom: 25px; border-radius: 0 15px 15px 0; transition: transform 0.3s, box-shadow 0.3s; }
+        .item-box:hover { transform: translateX(10px); box-shadow: -5px 10px 20px rgba(0,0,0,0.1); }
         [data-theme="dark"] .section:nth-child(odd) .item-box { background: rgba(255,255,255,0.05); }
-        .item-title { font-family: 'Oswald', sans-serif; font-size: 1.4em; font-weight: bold; margin-bottom: 5px; color: var(--accent); }
+        .item-title { font-family: 'Oswald', sans-serif; font-size: 1.5em; font-weight: bold; margin-bottom: 10px; color: var(--accent); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 5px;}
+        [data-theme="dark"] .section:nth-child(odd) .item-title { border-color: rgba(255,255,255,0.1); }
         
-        .grid-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; font-weight: bold;}
-        .grid-list li { background: rgba(0,0,0,0.05); padding: 10px 15px; border-radius: 5px; list-style-type: none; border: 1px solid rgba(0,0,0,0.1); transition: 0.3s; cursor: default;}
-        .grid-list li:hover { background: var(--text-color); color: var(--bg-primary); }
-        [data-theme="dark"] .section:nth-child(odd) .grid-list li { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);}
+        .why-watch { margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--text-color); font-style: italic; }
+        .why-watch strong { font-style: normal; font-family: 'Oswald', sans-serif; letter-spacing: 1px;}
+
+        /* ROMAN KISMI TASARIMI */
+        .novel-text { font-size: 1.2em; line-height: 2; text-indent: 40px; }
+        .novel-text::first-letter { font-size: 3em; font-family: 'Oswald', sans-serif; font-weight: bold; float: left; margin-right: 10px; line-height: 1; color: var(--accent); }
 
         .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.1; }
         .gear { position: absolute; fill: var(--text-color); animation: spin 40s linear infinite; }
@@ -64,7 +69,7 @@
 
 <div class="section" style="padding-top: 40px; text-align: center;">
     <div class="content-box">
-        <img src="logo.png" alt="KATALİST Nexus Kütüphane Logosu" class="main-logo" onerror="this.src='https://via.placeholder.com/300?text=LOGO+YUKLENIYOR'">
+        <img src="logo.png" alt="KATALİST Nexus Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/300?text=LOGO'">
         <h1>NEXUS KÜTÜPHANESİ</h1>
         <p style="text-align: center; font-weight: bold; font-size: 1.3em; opacity: 0.9;">Girişimciliğin Tarihsel Kodları ve Zihinsel Cephaneliğiniz</p>
     </div>
@@ -72,136 +77,180 @@
 
 <div class="section">
     <div class="content-box">
-        <h2>Girişimciliğin Evrimi: Tarihsel Bir Manifesto</h2>
-        <p>Girişimcilik kavramı, sosyal medyada afili kahve fincanlarıyla doğmadı. Kelimenin kökeni 13. yüzyıl Fransızcasındaki <b>"Entreprendre"</b> (bir işi üstlenmek, risk almak) kelimesinden gelir. İnsanoğlunun ateşi bulup takas ticaretine başladığı ilk günden beri, karanlıkta fırsatı gören herkes birer girişimciydi.</p>
-        <p>18. yüzyılda İrlandalı ekonomist <b>Richard Cantillon</b>, girişimciyi "Maliyetleri bilinen ama gelirleri belirsiz olan riskleri üstlenen kişi" olarak tanımladı. O dönemde bu kişiler, okyanusları aşarak ipek ve baharat getiren tüccarlardı. Sanayi Devrimi ile birlikte bu tanım değişti; artık girişimci sadece alıp satan değil, buhar gücünü kullanarak üretim bantları kuran, Henry Ford gibi seri üretim hatlarını icat eden yenilikçiydi.</p>
-        <p>Ve Dijital Çağ... Silikon Vadisi'nin garajlarında, lehim kokuları arasında doğan yeni nesil girişimcilik, sermayeden çok "fikrin ve kodun" gücüne dayanıyordu. Bugün Katalist Nexus olarak bizler, o kadim tüccarların risk alma cesaretini, Sanayi Devrimi'nin disiplinini ve Dijital Çağ'ın sınırsız inovasyon gücünü aynı masada buluşturuyoruz. İşte bu kütüphane, o köklü mirası anlamanız için tasarlandı.</p>
-    </div>
-</div>
-
-<div class="section">
-    <div class="content-box">
         <h2>Pazarı Anlamak: Sinema Arşivi (15 Başyapıt)</h2>
-        <p>Filmler sadece eğlence aracı değildir; doğru izlendiğinde, liderlik psikolojisini, kriz anındaki karar alma mekanizmalarını ve insan doğasının para/güç karşısındaki tepkilerini analiz edebileceğiniz birer vaka çalışmasıdır (Case Study). İşte bir Katalist üyesinin mutlaka analiz etmesi gereken 15 sinematografik başyapıt:</p>
+        <p>Filmler sadece eğlence aracı değildir; doğru izlendiğinde, liderlik psikolojisini, kriz anındaki karar alma mekanizmalarını ve insan doğasının para/güç karşısındaki tepkilerini analiz edebileceğiniz birer vaka çalışmasıdır (Case Study).</p>
 
         <div class="item-box">
             <div class="item-title">1. The Founder (Kurucu)</div>
-            <p>McDonald's'ın hikayesi. Fikri bulan değil, o fikri acımasızca "ölçeklendiren" (scale eden) kişinin, Ray Kroc'un nasıl bir imparatorluk kurduğunu anlatır. Fikrin hiçbir şey, icraatın her şey olduğunun en acı kanıtıdır.</p>
+            <p>McDonald's'ın kuruluş hikayesini anlatır. İki kardeşin bulduğu "hızlı servis" fikrini, milkshake makinesi satıcısı Ray Kroc'un nasıl fark edip, ahlaki sınırları zorlayarak devasa bir küresel imparatorluğa dönüştürdüğünü işler.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Fikri bulanın değil, o fikri acımasızca iş modeline çevirip "ölçeklendiren" (scale eden) kişinin kazandığını anlamak için.</p>
         </div>
 
         <div class="item-box">
             <div class="item-title">2. The Wolf of Wall Street (Para Avcısı)</div>
-            <p>Satışın, iknanın ve manipülasyonun karanlık yüzü. Jordan Belfort'un hikayesi, bize etik sınırların aşıldığında kurulan imparatorlukların nasıl hızla çökebileceğini gösteren kusursuz bir psikoloji dersidir.</p>
+            <p>Jordan Belfort'un Wall Street'te değersiz hisse senetlerini zenginlere satarak nasıl bir gecede milyoner olduğunu ve açgözlülüğün getirdiği o kaçınılmaz, yıkıcı sonu anlatır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Satışın, ikna psikolojisinin ve müşteri manipülasyonunun karanlık yüzünü görmek; etik sınırların aşıldığında kurulan sistemlerin çökmeye mahkum olduğunu kavramak için.</p>
         </div>
 
         <div class="item-box">
             <div class="item-title">3. The Social Network (Sosyal Ağ)</div>
-            <p>Mark Zuckerberg'in Harvard'daki yurt odasından dünyanın en büyük dijital devletini kurma süreci. Ortaklıkların (Co-founder) ve hisse senetlerinin ne kadar ölümcül kavgalara yol açabileceğini gösterir.</p>
+            <p>Mark Zuckerberg'in Harvard yatakhanesinde başlattığı Facebook projesinin, fikir hırsızlığı davaları ve en yakın arkadaşıyla (Eduardo Saverin) yaşadığı ölümcül hisse senedi savaşları eşliğinde büyümesini konu alır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Kurucu ortaklıkların (Co-founder) yazılı sözleşmeler olmadan ne kadar tehlikeli olabileceğini ve yatırımcı ilişkilerindeki yılan çukurlarını görmek için.</p>
         </div>
 
         <div class="item-box">
             <div class="item-title">4. Pirates of Silicon Valley (Silikon Vadisi Korsanları)</div>
-            <p>Bill Gates ve Steve Jobs arasındaki efsanevi rekabet. Sanat, tasarım, teknoloji ve pazarlamanın nasıl bir araya geldiğini, "İyi sanatçılar kopyalar, büyük sanatçılar çalar" sözünün vücut bulmuş halini anlatır.</p>
+            <p>Bill Gates (Microsoft) ve Steve Jobs (Apple) arasındaki efsanevi rekabeti anlatır. Grafik arayüzü ve farenin Xerox'tan nasıl "çalınıp" ticari bir ürüne dönüştürüldüğünü belgeler.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Piyasada ilk olmanın değil, başkasının teknolojisini en iyi şekilde paketleyip (pazarlayıp) satanın vizyoner sayıldığını öğrenmek için.</p>
         </div>
 
         <div class="item-box">
             <div class="item-title">5. Moneyball (Kazanma Sanatı)</div>
-            <p>Milyon dolarlık bütçelere sahip takımları, sadece veriyi (data) ve matematiği kullanarak alt eden bir beyin fırtınası. Sınırlı kaynaklarla maksimum verim elde etmenin (Lean Startup mantığı) en iyi özetidir.</p>
+            <p>Kısıtlı bütçeye sahip Oakland Athletics beyzbol takımının menajeri Billy Beane'in, oyuncu transferlerinde yıldız isimler yerine sadece matematiği ve veriyi (data) kullanarak dev bütçeli takımları nasıl alt ettiğini anlatır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Sınırlı sermaye ile maksimum verim elde etmenin (Lean Startup) ve eski kafalı endüstrileri veri analiziyle parçalamanın en saf halini görmek için.</p>
         </div>
 
-        <ul class="grid-list">
-            <li>6. The Pursuit of Happyness (Umudunu Kaybetme) - Direnç ve yılmazlık (Resilience) dersi.</li>
-            <li>7. The Big Short (Büyük Açık) - Krizleri ve pazarın kör noktalarını önceden görebilmek.</li>
-            <li>8. Ford v Ferrari - İnovasyon ile kurumsal bürokrasinin çatışması.</li>
-            <li>9. Joy - Ürün geliştirme (Product Development) ve sıfırdan pazar yaratma.</li>
-            <li>10. Catch Me If You Can (Sıkıysa Yakala) - Özgüvenin ve imajın pazarlamadaki yeri.</li>
-            <li>11. Wall Street (1987) - "Greed is good" felsefesi ve kapitalizmin anatomisi.</li>
-            <li>12. Margin Call (Oyunun Sonu) - Şirket içi kriz yönetimi ve risk analizi.</li>
-            <li>13. Glengarry Glen Ross - Satış dünyasının acımasız baskısı (ABC - Always Be Closing).</li>
-            <li>14. Tetris - Fikri mülkiyet hakları, telifler ve uluslararası müzakere sanatları.</li>
-            <li>15. The Aviator - Howard Hughes'un obsesif mükemmeliyetçiliği ve vizyonerliği.</li>
-        </ul>
+        <div class="item-box">
+            <div class="item-title">6. The Pursuit of Happyness (Umudunu Kaybetme)</div>
+            <p>Chris Gardner'ın eşi tarafından terk edilip evsiz kaldıktan sonra, küçük oğluyla birlikte tuvaletlerde yatarken, ücretsiz bir borsa stajyerliği programında en iyisi olmak için verdiği insanüstü mücadeleyi anlatır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Başarısızlık ve çaresizlik anlarında yılmazlığın (resilience) ne demek olduğunu iliklerinize kadar hissetmek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">7. The Big Short (Büyük Açık)</div>
+            <p>2008 Küresel Finans Krizi'ni aylar öncesinden gören ve tüm bankacılık sisteminin çökeceğine dair "açığa satış" yaparak milyarlarca dolar kazanan bir avuç aykırı finansçının gerçek hikayesidir.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Kalabalıkların (sürünün) her zaman haklı olmadığını, krizleri önceden görüp piyasanın kör noktalarında nasıl pozisyon alınacağını anlamak için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">8. Ford v Ferrari</div>
+            <p>1960'larda otomotiv devi Ford'un, prestijli Le Mans yarışlarında yenilmez Ferrari'yi alt etmek için aykırı mühendis Carroll Shelby ve yarışçı Ken Miles'ı işe almasını işler.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Saf inovasyon ve yeteneğin, kravatlı yöneticilerin kurumsal bürokrasisine (red tape) karşı verdiği savaşı analiz etmek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">9. Joy</div>
+            <p>Sıradan bir ev kadını olan Joy Mangano'nun, kendi icat ettiği "kendi kendini sıkan paspas" (Miracle Mop) ile üretim, patent hırsızlığı ve pazarlama zorluklarını aşarak nasıl bir ticaret kraliçesine dönüştüğünü anlatır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Ürün geliştirme sürecinde fabrikalarla edilen kavgaları, patent davalarını ve sıfırdan "Pazar Yaratma" stratejisini gözlemlemek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">10. Catch Me If You Can (Sıkıysa Yakala)</div>
+            <p>Frank Abagnale Jr.'ın henüz 19 yaşına gelmeden Pan Am pilotu, doktor ve savcı kılığına girerek milyonlarca dolarlık sahte çek dolandırıcılığı yapmasının gerçek hikayesidir.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Özgüvenin, dış görünüşün ve algı yönetiminin (algı = gerçeklik) iş dünyasındaki korkutucu gücünü idrak etmek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">11. Wall Street (1987)</div>
+            <p>Genç ve hırslı borsa simsarı Bud Fox'un, efsanevi yatırımcı Gordon Gekko'nun kanatları altına girmesini ve kapitalizmin "Açgözlülük iyidir" felsefesiyle tanışmasını konu alır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Pazar ekonomisinin acımasız kurallarını ve içeriden bilgi sızdırmanın (insider trading) yozlaştırıcı etkisini anlamak için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">12. Margin Call (Oyunun Sonu)</div>
+            <p>Bir yatırım bankasında, 2008 krizinin patlak vermesinden sadece 24 saat önce, bir risk analistinin sistemin çökmek üzere olduğunu fark etmesiyle üst yönetimin gece yarısı aldığı acil kararları işler.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Milyar dolarlık kararların ahlaki ikilemlerini, kriz anında yönetim kurulundaki buz gibi pragmatizmi izlemek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">13. Glengarry Glen Ross</div>
+            <p>Bir emlak ofisinde çalışan dört satıcının, sadece birinci ve ikincinin işini koruyabileceği, diğerlerinin kovulacağı bir satış yarışması altındaki çaresiz çırpınışlarını konu alır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> "ABC" (Always Be Closing - Her Zaman Satışı Kapat) felsefesini ve rekabetin zayıfları nasıl ezip geçtiğini görmek için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">14. Tetris</div>
+            <p>Sovyet Rusya'da icat edilen basit bir blok oyununun (Tetris), Soğuk Savaş döneminde demir perdeyi aşıp Game Boy ile tüm dünyaya yayılmasının arkasındaki telif ve lisans savaşlarını anlatır.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Fikri mülkiyet (IP) haklarının, kontratların ve uluslararası müzakere masalarındaki stratejik hamlelerin önemini kavramak için.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">15. The Aviator (Göklerin Hakimi)</div>
+            <p>Havacılık öncüsü ve milyarder Howard Hughes'un obsesif-kompulsif bozukluğuna rağmen sinema ve uçak sanayisinde imza attığı devasa, akılalmaz ve riskli projeleri işler.</p>
+            <p class="why-watch"><strong>Neden İzlemelisiniz?</strong> Vizyonerliğin ve mükemmeliyetçiliğin delilikle olan ince çizgisini, vizyon uğruna her şeyi riske atabilme cesaretini anlamak için.</p>
+        </div>
     </div>
 </div>
 
 <div class="section">
     <div class="content-box">
         <h2>Zihinsel Cephanelik: 50 Kitaplık Master Liste</h2>
-        <p>İçine gireceğiniz savaşta en büyük silahınız sermayeniz değil, entelektüel derinliğinizdir. Mutfakta harikalar yaratmak için gereken tarif bilgisi gibi, iş dünyasında da zihninizi bu 50 başyapıtla beslemelisiniz.</p>
+        <p>İçine gireceğiniz savaşta en büyük silahınız sermayeniz değil, entelektüel derinliğinizdir. Mutfakta harikalar yaratmak için gereken o tarif bilgisi gibi, iş dünyasında da zihninizi bu 50 başyapıtla beslemelisiniz.</p>
 
-        <div class="item-box">
-            <div class="item-title">1. Zengin Baba Yoksul Baba (Robert Kiyosaki)</div>
-            <p>Geleneksel eğitimin size öğretemediği "Paranın dili". Pasif gelir, varlık ve yükümlülük arasındaki o kritik farkı anlamadan finansal özgürlüğe ulaşılamayacağının manifestosu.</p>
-        </div>
+        <div class="item-box"><div class="item-title">1. Zengin Baba Yoksul Baba (Robert Kiyosaki)</div><p>Okulun öğretmediği finansal okuryazarlık. Aktif (Sana para getiren) ve Pasif (Senden para götüren) varlık ayrımının ustalık sınıfı.</p></div>
+        <div class="item-box"><div class="item-title">2. Yalın Yeni Girişim (Eric Ries)</div><p>Aylarca gizli kod yazmak yerine, en ilkel ürünle (MVP) hemen pazara çıkıp müşteri verisiyle (Öğren-Yap-Ölç) büyüme stratejisi.</p></div>
+        <div class="item-box"><div class="item-title">3. Sıfırdan Bire (Peter Thiel)</div><p>Rekabet ezikler içindir. Var olan bir şeyi geliştirmek yerine, yepyeni bir pazar yaratıp orada tekelleşmenin felsefesi.</p></div>
+        <div class="item-box"><div class="item-title">4. Ayakkabı Gurusu / Shoe Dog (Phil Knight)</div><p>Nike'ın kuruluşundaki o kanlı terli mücadele. İflasın eşiğindeki uykusuz gecelerin ve operasyonel tedarik krizlerinin romanı.</p></div>
+        <div class="item-box"><div class="item-title">5. Atomik Alışkanlıklar (James Clear)</div><p>Büyük hedefler koymak yerine, %1'lik mikroskobik günlük sistemler kurarak "Bileşik Getiri" ile devasa sonuçlara ulaşmanın yolu.</p></div>
+        
+        <div class="item-box"><div class="item-title">6. İknanın Psikolojisi (Robert Cialdini)</div><p>İnsanların "Evet" demesini sağlayan 6 evrensel psikolojik tetikleyici; kıtlık, otorite, sosyal kanıt ve karşılıklılık ilkesi.</p></div>
+        <div class="item-box"><div class="item-title">7. Akıllı Yatırımcı (Benjamin Graham)</div><p>Warren Buffett'ın hocasından, duygulara kapılmadan şirket bilançolarını okumanın ve değer yatırımının (Value Investing) kutsal kitabı.</p></div>
+        <div class="item-box"><div class="item-title">8. Dost Kazanma ve İnsanları Etkileme Sanatı (Dale Carnegie)</div><p>Network kurmanın, ego yönetimi yapmanın ve insan ilişkilerinde çatışmadan galip ayrılmanın 100 yıllık değişmez formülü.</p></div>
+        <div class="item-box"><div class="item-title">9. Hızlı ve Yavaş Düşünme (Daniel Kahneman)</div><p>Beynimizin Sistem 1 (İçgüdüsel) ve Sistem 2 (Analitik) olarak nasıl çalıştığı; müşterilerin rasyonel değil, duygusal karar verdiği gerçeği.</p></div>
+        <div class="item-box"><div class="item-title">10. Elon Musk Biyografisi (Walter Isaacson)</div><p>SpaceX ve Tesla'nın kuruluşundaki acımasız çalışma etiği, mühendislik çözümleri ve risk toleransının detaylı anatomisi.</p></div>
 
-        <div class="item-box">
-            <div class="item-title">2. Yalın Yeni Girişim (Eric Ries)</div>
-            <p>Startup dünyasının İncil'i. Ürününüzü aylarca saklamak yerine MVP (Minimum Uygulanabilir Ürün) ile hemen pazara çıkıp "Öğren - Yap - Ölç" döngüsünü nasıl kuracağınızı anlatır.</p>
-        </div>
+        <div class="item-box"><div class="item-title">11. İyiden Mükemmele / Good to Great (Jim Collins)</div><p>İyi şirketler neden sadece "iyi" kalır? Onları "Mükemmel" yapan o 5. Seviye Liderlik ve Kirpi Konsepti'nin bilimsel araştırması.</p></div>
+        <div class="item-box"><div class="item-title">12. Çizginin Dışındakiler / Outliers (Malcolm Gladwell)</div><p>Dahilerin sırrı yetenek değil, 10.000 saatlik pratik kuralı ve doğru zamanda doğru fırsat pencerelerinde doğmuş olmalarıdır.</p></div>
+        <div class="item-box"><div class="item-title">13. Savaş Sanatı (Sun Tzu)</div><p>Savaşmadan kazanmanın yolları. Rakiplerin zayıf noktalarını stratejik konumlanma ve aldatma taktikleriyle iş dünyasına uyarlama rehberi.</p></div>
+        <div class="item-box"><div class="item-title">14. Zor Şeylerin Zor Yanları (Ben Horowitz)</div><p>İşler tıkırında giderken CEO olmak kolaydır. Şirket batarken, en yakın arkadaşınızı kovmanız gerektiğinde ne yapacağınızı anlatan acımasız rehber.</p></div>
+        <div class="item-title" style="margin-top: 20px;">15. Prens (Machiavelli)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Gücü elde tutmak için gerektiğinde korkulmanın sevilmekten daha güvenli olduğunu anlatan pragmatist siyaset ve yönetim felsefesi.</p>
+        <div class="item-title" style="margin-top: 20px;">16. Pür Dikkat / Deep Work (Cal Newport)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Bildirimlerin ve sosyal medyanın zihni çürüttüğü çağda, saatlerce bölünmeden lazer odaklanmayla çalışabilme becerisi.</p>
+        <div class="item-title" style="margin-top: 20px;">17. Başarmak İçin Tasarlandı (Jim Collins)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Yüzyıllarca ayakta kalan vizyoner şirketlerin (Katalist gibi) temel değerlerini nasıl koruduklarının analizi.</p>
+        <div class="item-title" style="margin-top: 20px;">18. Mor İnek (Seth Godin)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Kahverengi ineklerin arasında dikkat çekmek istiyorsan Mor İnek olmalısın. Ürüne "Fark edilebilirlik" kodlama sanatı.</p>
+        <div class="item-title" style="margin-top: 20px;">19. Steve Jobs Biyografisi (Walter Isaacson)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Sanat ve teknolojinin kesişimi. Kullanıcı deneyimi (UX) takıntısının ve vizyonu "Gerçekliği Çarpıtma Alanı" ile ekibe dikte etmenin romanı.</p>
+        <div class="item-title" style="margin-top: 20px;">20. Kanca / Hooked (Nir Eyal)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Tetikleyici, Eylem, Ödül, Yatırım. Ürünleri nasıl alışkanlık yapan bağımlılıklara dönüştürebilirsiniz?</p>
 
-        <div class="item-box">
-            <div class="item-title">3. Sıfırdan Bire (Peter Thiel)</div>
-            <p>Rekabet kaybedenler içindir. Google veya Facebook gibi devlerin rekabet etmeyip kendi tekellerini (Monopoly) nasıl sıfırdan (0'dan 1'e) kurduklarının arkasındaki o aykırı felsefe.</p>
-        </div>
+        <div class="item-title" style="margin-top: 20px;">21. Babil'in En Zengin Adamı (George S. Clason)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Kazandığının en az onda birini kendine sakla. Servet birikiminin 4000 yıllık en temel değişmez kuralları.</p>
+        <div class="item-title" style="margin-top: 20px;">22. Neden ile Başla / Start With Why (Simon Sinek)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">İnsanlar "Ne" yaptığınızı değil, "Neden" yaptığınızı satın alırlar. Gerçek liderliğin altın çemberi.</p>
+        <div class="item-title" style="margin-top: 20px;">23. Etkili İnsanların 7 Alışkanlığı (Stephen Covey)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Proaktif olmak, sonu düşünerek işe başlamak ve "Kazan-Kazan" zihniyetini hayatın merkezine koymak.</p>
+        <div class="item-title" style="margin-top: 20px;">24. Siyah Kuğu / Black Swan (Nassim Nicholas Taleb)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Öngörülemez, aşırı etkili finansal veya tarihi krizlerin doğasını ve istatistiklerin neden yanıltıcı olduğunu kavrama rehberi.</p>
+        <div class="item-title" style="margin-top: 20px;">25. Başarılı Liderlerin Çizgisi / Principles (Ray Dalio)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Milyarder yatırımcının şirketinde uyguladığı "Radikal Şeffaflık" ve kararları ego ile değil algoritmalarla alma prensipleri.</p>
 
-        <div class="item-box">
-            <div class="item-title">4. Ayakkabı Gurusu / Shoe Dog (Phil Knight)</div>
-            <p>Nike'ın kurucusundan, kaosun, uykusuz gecelerin ve iflasın eşiğinden dönülen anların dürüstçe anlatıldığı, paha biçilemez bir operasyonel icraat hikayesi.</p>
-        </div>
+        <div class="item-title" style="margin-top: 20px;">26. Innovator's Dilemma (Clayton Christensen)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Mükemmel yönetilen dev şirketler neden batar? Çünkü yeni, ucuz "yıkıcı teknolojileri" (Disruptive) baştan ciddiye almazlar.</p>
+        <div class="item-title" style="margin-top: 20px;">27. İrade Terbiyesi (Jules Payot)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Genç bir zihnin tembellik ve haz peşinde koşmaktan kurtulup, zihinsel bir kılıç gibi nasıl keskinleştirileceğinin psikolojisi.</p>
+        <div class="item-title" style="margin-top: 20px;">28. Sınırlarını Zorla / Can't Hurt Me (David Goggins)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Acıyı sevmek. Beyin sana "Bitti, pes et" dediğinde aslında kapasitenin sadece %40'ını kullanıyor olduğun gerçeği.</p>
+        <div class="item-title" style="margin-top: 20px;">29. Asla Farkı Bölüşme (Chris Voss)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Eski bir FBI rehine kurtarmacısından iş masasında pazarlık taktikleri. Empatiyi silah olarak kullanarak istediğini alma sanatı.</p>
+        <div class="item-title" style="margin-top: 20px;">30. Traction (Gabriel Weinberg)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Bir projenin %50'si ürün, %50'si büyüme kanallarıdır (Traction). 19 farklı müşteri bulma kanalının bilimsel testi.</p>
 
-        <div class="item-box">
-            <div class="item-title">5. Atomik Alışkanlıklar (James Clear)</div>
-            <p>Motivasyon masalını çöpe atıp, %1'lik mikroskobik gelişimlerin bileşik getiriyle (Compound Interest) nasıl devasa değişimlere dönüştüğünü anlatan, bir girişimcinin sistem kurma rehberi.</p>
-        </div>
+        <div class="item-title" style="margin-top: 20px;">31. Alışkanlıkların Gücü (Charles Duhigg)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Beynin enerji tasarrufu için kurduğu İşaret-Rutin-Ödül döngüsünü hackleyerek zararlı döngüleri faydalıya çevirme.</p>
+        <div class="item-title" style="margin-top: 20px;">32. Das Kapital'in Özü (Karl Marx Okumaları)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Sistemi hacklemek için önce sistemi anlamalısınız. Emeğin, sermayenin ve artı-değerin üretim ilişkilerindeki yeri.</p>
+        <div class="item-title" style="margin-top: 20px;">33. İnsan Doğasının Kanunları (Robert Greene)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Karşınızdaki insanın maskesinin arkasındaki gerçek niyeti, kıskançlığı, narsisizmi ve korkuyu okuma rehberi.</p>
+        <div class="item-title" style="margin-top: 20px;">34. Orijinaller (Adam Grant)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Dünyayı değiştiren aykırı zihinler aslında körü körüne risk almazlar. Riski portföyleyip yaratıcı yıkıma nasıl odaklanırlar?</p>
+        <div class="item-title" style="margin-top: 20px;">35. Yalın Düşünce (James P. Womack)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Toyota üretim sisteminin temeli. İsrafı (Muda) ortadan kaldırıp müşteriye değer katan operasyonel akışı kurmak.</p>
 
-        <h3 style="margin-top: 40px; border-bottom: 1px solid rgba(0,0,0,0.2); padding-bottom: 10px;">Derinleşmeniz Gereken 45 Başyapıt</h3>
-        <ul class="grid-list" style="font-weight: normal; font-size: 1.05em;">
-            <li>6. İknanın Psikolojisi (Robert Cialdini)</li>
-            <li>7. Akıllı Yatırımcı (Benjamin Graham)</li>
-            <li>8. Dost Kazanma ve İnsanları Etkileme Sanatı (Dale Carnegie)</li>
-            <li>9. Hızlı ve Yavaş Düşünme (Daniel Kahneman)</li>
-            <li>10. Elon Musk (Walter Isaacson)</li>
-            <li>11. İyiden Mükemmele / Good to Great (Jim Collins)</li>
-            <li>12. Çizginin Dışındakiler / Outliers (Malcolm Gladwell)</li>
-            <li>13. Savaş Sanatı (Sun Tzu)</li>
-            <li>14. Zor Şeylerin Zor Yanları (Ben Horowitz)</li>
-            <li>15. Prens (Machiavelli)</li>
-            <li>16. Pür Dikkat / Deep Work (Cal Newport)</li>
-            <li>17. Başarmak İçin Tasarlandı / Built to Last (Jim Collins)</li>
-            <li>18. Mor İnek / Purple Cow (Seth Godin)</li>
-            <li>19. Steve Jobs Biyografisi (Walter Isaacson)</li>
-            <li>20. Kanca / Hooked (Nir Eyal)</li>
-            <li>21. Babil'in En Zengin Adamı (George S. Clason)</li>
-            <li>22. Neden ile Başla / Start With Why (Simon Sinek)</li>
-            <li>23. Etkili İnsanların 7 Alışkanlığı (Stephen Covey)</li>
-            <li>24. Siyah Kuğu / Black Swan (Nassim Nicholas Taleb)</li>
-            <li>25. Başarılı Liderlerin Çizgisi (Ray Dalio)</li>
-            <li>26. Innovator's Dilemma (Clayton Christensen)</li>
-            <li>27. İrade Terbiyesi (Jules Payot)</li>
-            <li>28. Sınırlarını Zorla / Can't Hurt Me (David Goggins)</li>
-            <li>29. Asla Farkı Bölüşme / Never Split The Difference (Chris Voss)</li>
-            <li>30. Traction (Gabriel Weinberg)</li>
-            <li>31. Alışkanlıkların Gücü (Charles Duhigg)</li>
-            <li>32. Sermaye / Das Kapital'in Özü (Karl Marx / Yorumlamalar)</li>
-            <li>33. İnsan Doğasının Kanunları (Robert Greene)</li>
-            <li>34. Orijinaller (Adam Grant)</li>
-            <li>35. Yalın Düşünce (James P. Womack)</li>
-            <li>36. Rework (Jason Fried)</li>
-            <li>37. Blue Ocean Strategy (W. Chan Kim)</li>
-            <li>38. Yüzde Bir Kuralı (Tommy Baker)</li>
-            <li>39. Kabileler / Tribes (Seth Godin)</li>
-            <li>40. Contagious (Jonah Berger)</li>
-            <li>41. Düşün ve Zengin Ol (Napoleon Hill)</li>
-            <li>42. Satışın Kutsal Kitabı (Jeffrey Gitomer)</li>
-            <li>43. Tüketici Ne İster? (Paco Underhill)</li>
-            <li>44. Blitzscaling (Reid Hoffman)</li>
-            <li>45. Öngörülemez Akıl (Dan Ariely)</li>
-            <li>46. Antikırılganlık / Antifragile (Nassim Nicholas Taleb)</li>
-            <li>47. Founders at Work (Jessica Livingston)</li>
-            <li>48. Platform Devrimi (Geoffrey G. Parker)</li>
-            <li>49. Dört Anlaşma (Don Miguel Ruiz)</li>
-            <li>50. Drive: Başarı İçin Motivasyon (Daniel H. Pink)</li>
-        </ul>
+        <div class="item-title" style="margin-top: 20px;">36. Rework (Jason Fried)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Geleneksel iş dünyasının toplantılarına, uzun iş planlarına ve ofis mesailerine karşı yazılmış anarşist bir manifesto.</p>
+        <div class="item-title" style="margin-top: 20px;">37. Mavi Okyanus Stratejisi (W. Chan Kim)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Kanlı, rekabetçi kırmızı okyanuslarda köpekbalıklarıyla savaşmak yerine, kuralların olmadığı, rekabetsiz mavi okyanuslar yaratmak.</p>
+        <div class="item-title" style="margin-top: 20px;">38. Yüzde Bir Kuralı (Tommy Baker)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Hayallerinize her gün sadece %1 yaklaşmanın, zamanla o hayalleri nasıl kaçınılmaz gerçeğe dönüştürdüğünün ispatı.</p>
+        <div class="item-title" style="margin-top: 20px;">39. Kabileler / Tribes (Seth Godin)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Artık dev reklam bütçeleri işe yaramıyor. İhtiyacınız olan şey aynı vizyona inanan sadık bir kabile kurup onlara liderlik etmektir.</p>
+        <div class="item-title" style="margin-top: 20px;">40. Contagious (Jonah Berger)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Bazı fikirler ve ürünler neden virüs gibi yayılır? Sosyal paranın, tetikleyicilerin ve hikaye anlatıcılığının (Viral pazarlama) kodları.</p>
+
+        <div class="item-title" style="margin-top: 20px;">41. Düşün ve Zengin Ol (Napoleon Hill)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Tarihin en zengin 500 adamının ortak sırrı. Arzu, inanç ve alt bilinç programlamanın vizyonu gerçeğe dönüştürme gücü.</p>
+        <div class="item-title" style="margin-top: 20px;">42. Satışın Kutsal Kitabı (Jeffrey Gitomer)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">İnsanlar satın almayı severler ama kendilerine bir şey "satılmasından" nefret ederler. Güven inşasının satış taktikleri.</p>
+        <div class="item-title" style="margin-top: 20px;">43. Tüketici Ne İster? (Paco Underhill)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">İnsanların mağazada (veya web sitesinde) nereye baktığı, nasıl yürüdüğü ve bilinçaltıyla sepete nasıl ürün attığının analizi.</p>
+        <div class="item-title" style="margin-top: 20px;">44. Blitzscaling (Reid Hoffman)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">LinkedIn kurucusundan, belirsizlik ortamında verimliliği bir kenara bırakıp "Yıldırım Hızında" büyümenin (Scale) stratejileri.</p>
+        <div class="item-title" style="margin-top: 20px;">45. Öngörülemez Akıl (Dan Ariely)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Fiyatlandırma yaparken sunduğunuz sahte bir seçeneğin (Decoy Effect) insanların pahalı olanı almasını nasıl sağladığı.</p>
+        
+        <div class="item-title" style="margin-top: 20px;">46. Antikırılganlık / Antifragile (Nassim Nicholas Taleb)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Bazı sistemler kaostan zarar görmez, aksine kaostan beslenip güçlenirler. Krizleri yakıta çeviren organizasyonların DNA'sı.</p>
+        <div class="item-title" style="margin-top: 20px;">47. Founders at Work (Jessica Livingston)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">PayPal, Apple, Yahoo gibi devlerin henüz kimse onları tanımazken yaşadıkları o amatörce, kanlı ve çaresiz ilk günlerinin röportajları.</p>
+        <div class="item-title" style="margin-top: 20px;">48. Platform Devrimi (Geoffrey G. Parker)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Airbnb, Uber gibi tek bir ürün üretmeyen "Platformların", ürün üreten geleneksel fabrikaları nasıl yok ettiğinin mimarisi.</p>
+        <div class="item-title" style="margin-top: 20px;">49. Dört Anlaşma (Don Miguel Ruiz)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Kusursuz söz söyle, hiçbir şeyi kişisel alma, varsayımda bulunma, elinden gelenin en iyisini yap. Toltek bilgeliğinin liderlik ruhu.</p>
+        <div class="item-title" style="margin-top: 20px;">50. Drive (Daniel H. Pink)</div><p style="padding-left: 20px; border-left: 5px solid var(--text-color);">Ödül/ceza sisteminin artık çalışmadığı 21. yüzyılda, yaratıcı zihinleri motive eden 3 gerçek: Özerklik, Ustalık ve Amaç.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2 style="font-size: 2.8em; margin-bottom: 30px;">Girişimciliğin Tarihsel Serüveni: Ateşten Silikon Vadisi'ne</h2>
+        
+        <p class="novel-text">Her şey karanlıkta başladı. Mağarasında oturup avladığı etin bir kısmını yan kabilenin mızrak uçlarıyla takas eden o isimsiz avcı, insanlık tarihinin ilk girişimcisiydi. Henüz paranın, borsanın veya melek yatırımcıların icat edilmediği o ilkel çağlarda, iki farklı ihtiyacın kesişim noktasında bir değer yaratılabileceği içgüdüsü filizlenmişti. Binlerce yıl sonra bu içgüdü, Sümerlerin tabletlerine yazılan ilk borç sözleşmelerine, İpek Yolu'nun o kavurucu çöllerinde deve kervanlarıyla sadece "kâr ve risk" hesaplaması yaparak ilerleyen tüccarların zihinlerine kazındı.</p>
+        
+        <p class="novel-text">Orta Çağ'ın karanlığı biterken Rönesans, sadece sanatta değil, ticaretin de genetiğinde bir devrim yarattı. Tıpkı geleneksel sanatlarda, Hat ve Naht'ta icra edilen o milimetrik dikkat ve sabrın ticarete entegre olması gibi... Floransa sokaklarında Medici ailesi, o dönemin girişimcilerine (sanatçılara ve kaşiflere) sermaye sağlayarak tarihin ilk "Venture Capital" (Risk Sermayesi) modelini kurdu. Michelengelo bir sanatçı, Mediciler ise o sanatın çarpan etkisini (Scale) hesaplayan yatırımcılardı. Değer, yetenek ile sermayenin aynı masaya oturmasından doğuyordu.</p>
+
+        <p class="novel-text">Sanayi Devrimi ise oyunun kurallarını tamamen yıktı. İnsan gücünün yerini buhar makineleri alırken, Rockefeller'lar petrolü, Vanderbilt'ler demiryollarını, Henry Ford ise üretim bandını icat etti. Ford, arabayı icat etmedi; o, sadece zenginlerin binebildiği bir lüksü parçalara bölerek sıradan insanın alabileceği bir "seri üretim" disiplinine çevirdi. O dönemin fabrikaları adeta 400 derecelik bir Neapolitan fırını gibiydi; içerideki ateş yakıcıydı, zamanlamadaki bir saniyelik hata tüm ürünü çöpe atardı ama kusursuz bir senkronizasyonla çıkan ürün (hız, kalite ve ucuzluk) dünyayı değiştirdi.</p>
+
+        <p class="novel-text">Dijital Çağ ve Silikon Vadisi ise üretim bantlarını fabrikalardan alıp zihinlere taşıdı. Artık devasa demir çelik madenlerine ihtiyacınız yoktu; kod yazan on parmak ve bir garaj dünyayı fethetmek için yeterliydi. 90'ların sonundaki Dot-com balonu, sahte fikirlerin nasıl acımasızca patlatıldığını gösterdi. Steve Jobs ve Bill Gates gibi vizyonerler ise "Müşteri ne istediğini bilmez, ona ne isteyeceğini biz gösteririz" diyerek ürün yaratmanın sadece mühendislik değil, aynı zamanda empati, psikoloji ve saf bir sanat olduğunu kanıtladılar.</p>
+        
+        <p class="novel-text">Ve bugün, yapay zekanın (AI) her saniye sınırları yeniden çizdiği yepyeni bir eşikteyiz. Teknoloji öylesine hızlandı ki, dünün bilgisi bugün çürümeye mahkum. İşte tam bu noktada, entelektüel derinliğin, disiplinin ve doğru ekibin (Network) önemi hiç olmadığı kadar hayati bir hale geldi. KATALİST Nexus, bu binlerce yıllık tarihsel mirasın üzerine, vizyonerlerin ve fikirlerin yeniden aynı masada buluşması için inşa edildi. Tarih, bekleyenleri değil; cesaret edip, disiplinle kendi kaderini kazanları yazar.</p>
     </div>
 </div>
 
