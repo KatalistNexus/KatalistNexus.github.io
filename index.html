@@ -3,83 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KATALİST Nexus | Eskişehir Entelektüel Girişimcilik Ağı</title>
+    <title>KATALİST Nexus | Eskişehir</title>
     <style>
-        :root { --main-color: #2c3e50; --accent-color: #e67e22; --text-color: #34495e; --bg-color: #f4f7f6; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background-color: #f0f0f0; margin: 0; padding: 0; }
+        .container { max-width: 850px; margin: 0 auto; padding: 0 20px; }
         
-        header { text-align: center; margin-bottom: 60px; padding-bottom: 20px; border-bottom: 2px solid #ddd; }
-        header h1 { font-size: 3em; margin: 0; color: var(--main-color); letter-spacing: -1px; }
-        header h1 span { color: var(--accent-color); font-weight: 300; }
-        header p { font-size: 1.2em; color: #7f8c8d; margin-top: 10px; }
-
-        .section { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .section h2 { color: var(--main-color); border-left: 5px solid var(--accent-color); padding-left: 15px; margin-top: 0; }
+        nav { background: #ffffff; padding: 25px 0; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; text-align: center; }
+        nav .logo { font-size: 1.4em; font-weight: bold; color: #1a1a1a; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
         
-        .manifesto { font-style: italic; font-size: 1.1em; text-align: center; color: #576574; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0; margin: 30px 0; }
+        .hero { background: #ffffff; padding: 80px 40px; text-align: center; margin: 40px 0; border-radius: 8px; border: 1px solid #eee; }
+        .hero h1 { font-size: 3em; margin: 0; letter-spacing: -1px; }
+        .hero p { font-size: 1.2em; color: #555; margin-top: 15px; }
 
-        .founders-card { display: flex; align-items: center; gap: 20px; background: #fafafa; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
-        .founders-card img { width: 80px; height: 80px; border-radius: 50%; background: #ddd; /* Buraya ileride fotoğraf eklenebilir */ }
-        .founders-text h3 { margin: 0; color: var(--main-color); }
-        .founders-text p { margin: 5px 0 0; font-size: 0.95em; }
+        .section { background: #ffffff; padding: 50px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 30px; }
+        .section h2 { font-size: 1.8em; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-top: 0; }
 
-        .secret-meetings { background: var(--main-color); color: white; padding: 30px; border-radius: 8px; text-align: center; margin-top: 40px; }
-        .secret-meetings h3 { color: var(--accent-color); margin-top: 0; }
-        .secret-meetings p { margin-bottom: 0; opacity: 0.9; }
+        .image-box { background: #e0e0e0; height: 250px; border-radius: 6px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; color: #777; font-weight: bold; }
 
-        footer { text-align: center; margin-top: 60px; color: #95a5a6; font-size: 0.9em; border-top: 1px solid #eee; padding-top: 20px; }
-        .linkedin-btn { display: inline-block; background: #0077b5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 20px; transition: background 0.3s; }
-        .linkedin-btn:hover { background: #005582; }
-
-        @media (max-width: 600px) { header h1 { font-size: 2.2em; } .founders-card { flex-direction: column; text-align: center; } }
+        .secret-info { background: #1a1a1a; color: #ffffff; padding: 40px; border-radius: 8px; text-align: center; margin: 40px 0; }
+        
+        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; }
+        .btn { display: inline-block; background: #1a1a1a; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 20px; }
     </style>
 </head>
 <body>
 
+<nav>
+    <div class="container">
+        <a href="#" class="logo">KATALİST NEXUS</a>
+    </div>
+</nav>
+
 <div class="container">
-    <header>
-        <h1>KATALİST <span>Nexus</span></h1>
-        <p>Eskişehir'in Gerçek Entelektüel ve Girişimci Hub'ı</p>
+
+    <header class="hero">
+        <h1>Geleceği Kurguluyoruz</h1>
+        <p>Eskişehir'in en seçkin entelektüel ve girişimci ağı.</p>
     </header>
 
     <div class="section">
-        <h2>Vizyonumuz</h2>
-        <p>Eskişehir, öğrenci potansiyeli ve akademik derinliğiyle Türkiye'nin en dinamik şehirlerinden biri. Ancak fark ettik ki, bu potansiyel, "girişimcilik" adı altında bazen yüzeysel, bazen de taklitçi yapılarla heba ediliyor. KATALİST Nexus, bu eksikliği gidermek; fikirlerin sadece konuşulduğu değil, entelektüel bir süzgeçten geçirilerek somut, yenilikçi projelere dönüştürüldüğü bir **beyin jimnastiği merkezi** olmak için kuruldu.</p>
-        
-        <p class="manifesto">"Biz, girişimciliği sadece şirket kurmak değil, bir düşünce biçimi, bir medeniyet inşası olarak görüyoruz."</p>
+        <div class="image-box">VİZYON GÖRSELİ</div>
+        <h2>Vizyon</h2>
+        <p>KATALİST Nexus, taklit fikirlerin ötesine geçerek Eskişehir'in genç potansiyelini gerçek girişimcilik projelerine dönüştürür. Beyin jimnastiği odaklı yaklaşımımızla, ekosistemdeki derinlik açığını kapatıyoruz.</p>
     </div>
 
     <div class="section">
-        <h2>Genç Ruh, Derin Vizyon: Kurucularımız</h2>
-        <p>KATALİST Nexus, henüz 19 yaşında olan iki vizyoner genç, **Yusuf** ve **İsa** tarafından hayata geçirildi. Onlar, Eskişehir ekosisteminin içindeki o büyük boşluğu; entelektüel birikimle girişimcilik ruhunun gerçek anlamda buluşamadığı gerçeğini genç yaşlarında fark ettiler.</p>
-        
-        <div class="founders-card">
-            <div class="founders-text">
-                <h3>Yusuf & İsa</h3>
-                <p>Üniversite sıralarında, teorik bilginin pratik girişimcilikle harmanlandığı, taklitlerden uzak, orijinal ve derinlikli fikirlerin yeşerebileceği bir "Nexus" (bağlantı noktası) hayal ettiler. Bu hayal, bugün Eskişehir'in en prestijli girişimcilik ağının temelini oluşturuyor.</p>
-            </div>
-        </div>
+        <h2>Hakkımızda</h2>
+        <p>Eskişehir ekosistemindeki entelektüel boşluğu fark eden genç vizyonerler <b>Yusuf ve İsa</b> tarafından kurulmuştur. Amacımız, fikirlerin somut projelere dönüştüğü bağımsız bir platform sunmaktır.</p>
     </div>
 
-    <div class="section">
-        <h2>Yeni Girişimcilere Destek</h2>
-        <p>Henüz fikir aşamasında olan veya projesini büyütmek isteyen yeni girişimciler için KATALİST Nexus, bir kuluçka merkezinden daha fazlasıdır. Biz burada sadece mentorluk veya network sunmuyoruz; bir fikrin entelektüel sermayesini, sanatsal bakış açısını (Culinary art'tan Hat sanatına uzanan o derinliği) ve teknik altyapısını kurguluyoruz.</p>
-        <p>Eğer fikrinizin sadece "para kazanmak" değil, bir "iz bırakmak" olduğuna inanıyorsanız, doğru yerdesiniz.</p>
+    <div class="secret-info">
+        <h3>Gizli Toplantılar</h3>
+        <p>Ağın kalitesini korumak adına toplantı lokasyonlarımız her hafta değişmekte ve sadece onaylı üyelere gizli olarak iletilmektedir.</p>
     </div>
-
-    <div class="secret-meetings">
-        <h3>Haftalık Toplantılarımız</h3>
-        <p>Fikirlerin özgürce tartışılabilmesi ve ağımızın bütünlüğünün korunması adına toplantı yerlerimiz her hafta farklı ve **gizli tutulmaktadır.** Sadece onaylanmış üyelerimize, toplantıdan kısa bir süre önce lokasyon bilgisi iletilir. Bu, Nexus'un "özel ve entelektüel" yapısının bir parçasıdır.</p>
-    </div>
-
-    <footer>
-        <p>Bize katılmak veya vizyonumuz hakkında daha fazla bilgi almak için LinkedIn sayfamızı takip edin.</p>
-        <a href="https://www.linkedin.com/company/katalistnexus" class="linkedin-btn">KATALİST Nexus LinkedIn</a>
-        <p style="margin-top:20px;">©️ 2026 KATALİST Nexus | Eskişehir</p>
-    </footer>
 
 </div>
+
+<footer>
+    <p>©️ 2026 KATALİST Nexus | Eskişehir</p>
+    <a href="https://www.linkedin.com/company/katalistnexus" class="btn">LinkedIn</a>
+</footer>
 
 </body>
 </html>
