@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entelektüel Kütüphane | KATALİST Nexus</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --accent: #555; }
+        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
+        [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --accent: #8f9779; }
+
+        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; transition: 0.5s; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-size: 3.5em; margin: 0; text-align: center;}
+        h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 10px; font-size: 2.2em; margin-top: 0; }
+        p { font-size: 1.15em; text-align: justify; margin-bottom: 20px; }
+
+        .section { padding: 80px 20px; margin: 0; position: relative; z-index: 10; }
+        .section:nth-child(odd) { background-color: var(--bg-primary); }
+        .section:nth-child(even) { background-color: var(--bg-secondary); }
+        [data-theme="dark"] .section:nth-child(even) { color: #1a1a1a; }
+        [data-theme="dark"] .section:nth-child(even) h2 { border-color: #1a1a1a; }
+        .content-box { max-width: 1000px; margin: 0 auto; }
+
+        nav { background: var(--nav-bg); padding: 15px 30px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 5px; font-size: 1.5em; text-decoration:none; color:var(--text-color);}
+
+        .main-logo { max-width: 250px; display: block; margin: 0 auto 30px auto; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4)); border-radius: 10px;}
+
+        /* LİSTELER VE İÇERİK KUTULARI */
+        .item-box { background: rgba(0,0,0,0.05); border-left: 5px solid var(--text-color); padding: 20px; margin-bottom: 20px; border-radius: 0 10px 10px 0; }
+        [data-theme="dark"] .section:nth-child(odd) .item-box { background: rgba(255,255,255,0.05); }
+        .item-title { font-family: 'Oswald', sans-serif; font-size: 1.4em; font-weight: bold; margin-bottom: 5px; color: var(--accent); }
+        
+        .grid-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; font-weight: bold;}
+        .grid-list li { background: rgba(0,0,0,0.05); padding: 10px 15px; border-radius: 5px; list-style-type: none; border: 1px solid rgba(0,0,0,0.1); transition: 0.3s; cursor: default;}
+        .grid-list li:hover { background: var(--text-color); color: var(--bg-primary); }
+        [data-theme="dark"] .section:nth-child(odd) .grid-list li { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);}
+
+        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.1; }
+        .gear { position: absolute; fill: var(--text-color); animation: spin 40s linear infinite; }
+        .gear-lg { width: 400px; height: 400px; top: -100px; left: -100px; }
+        .gear-md { width: 300px; height: 300px; bottom: 100px; right: -100px; animation-direction: reverse; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        #backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: transparent; border: none; cursor: pointer; z-index: 101; display: none; }
+        #backToTop svg { width: 100%; height: 100%; fill: var(--text-color); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="bg-gears">
+    <svg class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+    <svg class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</div>
+
+<nav>
+    <a href="index.html" class="nav-logo">← KATALİST NEXUS'A DÖN</a>
+</nav>
+
+<div class="section" style="padding-top: 40px; text-align: center;">
+    <div class="content-box">
+        <img src="logo.png" alt="KATALİST Nexus Kütüphane Logosu" class="main-logo" onerror="this.src='https://via.placeholder.com/300?text=LOGO+YUKLENIYOR'">
+        <h1>NEXUS KÜTÜPHANESİ</h1>
+        <p style="text-align: center; font-weight: bold; font-size: 1.3em; opacity: 0.9;">Girişimciliğin Tarihsel Kodları ve Zihinsel Cephaneliğiniz</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Girişimciliğin Evrimi: Tarihsel Bir Manifesto</h2>
+        <p>Girişimcilik kavramı, sosyal medyada afili kahve fincanlarıyla doğmadı. Kelimenin kökeni 13. yüzyıl Fransızcasındaki <b>"Entreprendre"</b> (bir işi üstlenmek, risk almak) kelimesinden gelir. İnsanoğlunun ateşi bulup takas ticaretine başladığı ilk günden beri, karanlıkta fırsatı gören herkes birer girişimciydi.</p>
+        <p>18. yüzyılda İrlandalı ekonomist <b>Richard Cantillon</b>, girişimciyi "Maliyetleri bilinen ama gelirleri belirsiz olan riskleri üstlenen kişi" olarak tanımladı. O dönemde bu kişiler, okyanusları aşarak ipek ve baharat getiren tüccarlardı. Sanayi Devrimi ile birlikte bu tanım değişti; artık girişimci sadece alıp satan değil, buhar gücünü kullanarak üretim bantları kuran, Henry Ford gibi seri üretim hatlarını icat eden yenilikçiydi.</p>
+        <p>Ve Dijital Çağ... Silikon Vadisi'nin garajlarında, lehim kokuları arasında doğan yeni nesil girişimcilik, sermayeden çok "fikrin ve kodun" gücüne dayanıyordu. Bugün Katalist Nexus olarak bizler, o kadim tüccarların risk alma cesaretini, Sanayi Devrimi'nin disiplinini ve Dijital Çağ'ın sınırsız inovasyon gücünü aynı masada buluşturuyoruz. İşte bu kütüphane, o köklü mirası anlamanız için tasarlandı.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Pazarı Anlamak: Sinema Arşivi (15 Başyapıt)</h2>
+        <p>Filmler sadece eğlence aracı değildir; doğru izlendiğinde, liderlik psikolojisini, kriz anındaki karar alma mekanizmalarını ve insan doğasının para/güç karşısındaki tepkilerini analiz edebileceğiniz birer vaka çalışmasıdır (Case Study). İşte bir Katalist üyesinin mutlaka analiz etmesi gereken 15 sinematografik başyapıt:</p>
+
+        <div class="item-box">
+            <div class="item-title">1. The Founder (Kurucu)</div>
+            <p>McDonald's'ın hikayesi. Fikri bulan değil, o fikri acımasızca "ölçeklendiren" (scale eden) kişinin, Ray Kroc'un nasıl bir imparatorluk kurduğunu anlatır. Fikrin hiçbir şey, icraatın her şey olduğunun en acı kanıtıdır.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">2. The Wolf of Wall Street (Para Avcısı)</div>
+            <p>Satışın, iknanın ve manipülasyonun karanlık yüzü. Jordan Belfort'un hikayesi, bize etik sınırların aşıldığında kurulan imparatorlukların nasıl hızla çökebileceğini gösteren kusursuz bir psikoloji dersidir.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">3. The Social Network (Sosyal Ağ)</div>
+            <p>Mark Zuckerberg'in Harvard'daki yurt odasından dünyanın en büyük dijital devletini kurma süreci. Ortaklıkların (Co-founder) ve hisse senetlerinin ne kadar ölümcül kavgalara yol açabileceğini gösterir.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">4. Pirates of Silicon Valley (Silikon Vadisi Korsanları)</div>
+            <p>Bill Gates ve Steve Jobs arasındaki efsanevi rekabet. Sanat, tasarım, teknoloji ve pazarlamanın nasıl bir araya geldiğini, "İyi sanatçılar kopyalar, büyük sanatçılar çalar" sözünün vücut bulmuş halini anlatır.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">5. Moneyball (Kazanma Sanatı)</div>
+            <p>Milyon dolarlık bütçelere sahip takımları, sadece veriyi (data) ve matematiği kullanarak alt eden bir beyin fırtınası. Sınırlı kaynaklarla maksimum verim elde etmenin (Lean Startup mantığı) en iyi özetidir.</p>
+        </div>
+
+        <ul class="grid-list">
+            <li>6. The Pursuit of Happyness (Umudunu Kaybetme) - Direnç ve yılmazlık (Resilience) dersi.</li>
+            <li>7. The Big Short (Büyük Açık) - Krizleri ve pazarın kör noktalarını önceden görebilmek.</li>
+            <li>8. Ford v Ferrari - İnovasyon ile kurumsal bürokrasinin çatışması.</li>
+            <li>9. Joy - Ürün geliştirme (Product Development) ve sıfırdan pazar yaratma.</li>
+            <li>10. Catch Me If You Can (Sıkıysa Yakala) - Özgüvenin ve imajın pazarlamadaki yeri.</li>
+            <li>11. Wall Street (1987) - "Greed is good" felsefesi ve kapitalizmin anatomisi.</li>
+            <li>12. Margin Call (Oyunun Sonu) - Şirket içi kriz yönetimi ve risk analizi.</li>
+            <li>13. Glengarry Glen Ross - Satış dünyasının acımasız baskısı (ABC - Always Be Closing).</li>
+            <li>14. Tetris - Fikri mülkiyet hakları, telifler ve uluslararası müzakere sanatları.</li>
+            <li>15. The Aviator - Howard Hughes'un obsesif mükemmeliyetçiliği ve vizyonerliği.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Zihinsel Cephanelik: 50 Kitaplık Master Liste</h2>
+        <p>İçine gireceğiniz savaşta en büyük silahınız sermayeniz değil, entelektüel derinliğinizdir. Mutfakta harikalar yaratmak için gereken tarif bilgisi gibi, iş dünyasında da zihninizi bu 50 başyapıtla beslemelisiniz.</p>
+
+        <div class="item-box">
+            <div class="item-title">1. Zengin Baba Yoksul Baba (Robert Kiyosaki)</div>
+            <p>Geleneksel eğitimin size öğretemediği "Paranın dili". Pasif gelir, varlık ve yükümlülük arasındaki o kritik farkı anlamadan finansal özgürlüğe ulaşılamayacağının manifestosu.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">2. Yalın Yeni Girişim (Eric Ries)</div>
+            <p>Startup dünyasının İncil'i. Ürününüzü aylarca saklamak yerine MVP (Minimum Uygulanabilir Ürün) ile hemen pazara çıkıp "Öğren - Yap - Ölç" döngüsünü nasıl kuracağınızı anlatır.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">3. Sıfırdan Bire (Peter Thiel)</div>
+            <p>Rekabet kaybedenler içindir. Google veya Facebook gibi devlerin rekabet etmeyip kendi tekellerini (Monopoly) nasıl sıfırdan (0'dan 1'e) kurduklarının arkasındaki o aykırı felsefe.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">4. Ayakkabı Gurusu / Shoe Dog (Phil Knight)</div>
+            <p>Nike'ın kurucusundan, kaosun, uykusuz gecelerin ve iflasın eşiğinden dönülen anların dürüstçe anlatıldığı, paha biçilemez bir operasyonel icraat hikayesi.</p>
+        </div>
+
+        <div class="item-box">
+            <div class="item-title">5. Atomik Alışkanlıklar (James Clear)</div>
+            <p>Motivasyon masalını çöpe atıp, %1'lik mikroskobik gelişimlerin bileşik getiriyle (Compound Interest) nasıl devasa değişimlere dönüştüğünü anlatan, bir girişimcinin sistem kurma rehberi.</p>
+        </div>
+
+        <h3 style="margin-top: 40px; border-bottom: 1px solid rgba(0,0,0,0.2); padding-bottom: 10px;">Derinleşmeniz Gereken 45 Başyapıt</h3>
+        <ul class="grid-list" style="font-weight: normal; font-size: 1.05em;">
+            <li>6. İknanın Psikolojisi (Robert Cialdini)</li>
+            <li>7. Akıllı Yatırımcı (Benjamin Graham)</li>
+            <li>8. Dost Kazanma ve İnsanları Etkileme Sanatı (Dale Carnegie)</li>
+            <li>9. Hızlı ve Yavaş Düşünme (Daniel Kahneman)</li>
+            <li>10. Elon Musk (Walter Isaacson)</li>
+            <li>11. İyiden Mükemmele / Good to Great (Jim Collins)</li>
+            <li>12. Çizginin Dışındakiler / Outliers (Malcolm Gladwell)</li>
+            <li>13. Savaş Sanatı (Sun Tzu)</li>
+            <li>14. Zor Şeylerin Zor Yanları (Ben Horowitz)</li>
+            <li>15. Prens (Machiavelli)</li>
+            <li>16. Pür Dikkat / Deep Work (Cal Newport)</li>
+            <li>17. Başarmak İçin Tasarlandı / Built to Last (Jim Collins)</li>
+            <li>18. Mor İnek / Purple Cow (Seth Godin)</li>
+            <li>19. Steve Jobs Biyografisi (Walter Isaacson)</li>
+            <li>20. Kanca / Hooked (Nir Eyal)</li>
+            <li>21. Babil'in En Zengin Adamı (George S. Clason)</li>
+            <li>22. Neden ile Başla / Start With Why (Simon Sinek)</li>
+            <li>23. Etkili İnsanların 7 Alışkanlığı (Stephen Covey)</li>
+            <li>24. Siyah Kuğu / Black Swan (Nassim Nicholas Taleb)</li>
+            <li>25. Başarılı Liderlerin Çizgisi (Ray Dalio)</li>
+            <li>26. Innovator's Dilemma (Clayton Christensen)</li>
+            <li>27. İrade Terbiyesi (Jules Payot)</li>
+            <li>28. Sınırlarını Zorla / Can't Hurt Me (David Goggins)</li>
+            <li>29. Asla Farkı Bölüşme / Never Split The Difference (Chris Voss)</li>
+            <li>30. Traction (Gabriel Weinberg)</li>
+            <li>31. Alışkanlıkların Gücü (Charles Duhigg)</li>
+            <li>32. Sermaye / Das Kapital'in Özü (Karl Marx / Yorumlamalar)</li>
+            <li>33. İnsan Doğasının Kanunları (Robert Greene)</li>
+            <li>34. Orijinaller (Adam Grant)</li>
+            <li>35. Yalın Düşünce (James P. Womack)</li>
+            <li>36. Rework (Jason Fried)</li>
+            <li>37. Blue Ocean Strategy (W. Chan Kim)</li>
+            <li>38. Yüzde Bir Kuralı (Tommy Baker)</li>
+            <li>39. Kabileler / Tribes (Seth Godin)</li>
+            <li>40. Contagious (Jonah Berger)</li>
+            <li>41. Düşün ve Zengin Ol (Napoleon Hill)</li>
+            <li>42. Satışın Kutsal Kitabı (Jeffrey Gitomer)</li>
+            <li>43. Tüketici Ne İster? (Paco Underhill)</li>
+            <li>44. Blitzscaling (Reid Hoffman)</li>
+            <li>45. Öngörülemez Akıl (Dan Ariely)</li>
+            <li>46. Antikırılganlık / Antifragile (Nassim Nicholas Taleb)</li>
+            <li>47. Founders at Work (Jessica Livingston)</li>
+            <li>48. Platform Devrimi (Geoffrey G. Parker)</li>
+            <li>49. Dört Anlaşma (Don Miguel Ruiz)</li>
+            <li>50. Drive: Başarı İçin Motivasyon (Daniel H. Pink)</li>
+        </ul>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">
+    <svg viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</button>
+
+<script>
+    window.onscroll = function() {
+        const s = window.pageYOffset;
+        document.querySelectorAll('.gear').forEach((g, i) => { 
+            let dir = (i % 2 === 0) ? 1 : -1; 
+            g.style.transform = `rotate(${dir * (s / (3 + (i % 3)))}deg)`; 
+        });
+        document.getElementById("backToTop").style.display = s > 400 ? "block" : "none";
+    };
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+</script>
+
+</body>
+</html>
