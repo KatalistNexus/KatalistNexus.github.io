@@ -3,66 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KATALİST Nexus | Eskişehir</title>
+    <title>KATALİST Nexus | Eskişehir Girişimcilik İstasyonu</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background-color: #f0f0f0; margin: 0; padding: 0; }
-        .container { max-width: 850px; margin: 0 auto; padding: 0 20px; }
-        
-        nav { background: #ffffff; padding: 25px 0; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; text-align: center; }
-        nav .logo { font-size: 1.4em; font-weight: bold; color: #1a1a1a; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        
-        .hero { background: #ffffff; padding: 80px 40px; text-align: center; margin: 40px 0; border-radius: 8px; border: 1px solid #eee; }
-        .hero h1 { font-size: 3em; margin: 0; letter-spacing: -1px; }
-        .hero p { font-size: 1.2em; color: #555; margin-top: 15px; }
+        /* Renk Değişkenleri */
+        :root {
+            --bg-color: #c0c0c0;
+            --card-bg: #f5f5dc; /* Kemik Rengi */
+            --text-color: #1a1a1a;
+            --nav-bg: #ffffff;
+            --gear-color: #333;
+        }
 
-        .section { background: #ffffff; padding: 50px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 30px; }
-        .section h2 { font-size: 1.8em; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-top: 0; }
+        /* Karanlık Mod - Lacivert ve Altınımsı Kahve */
+        [data-theme="dark"] {
+            --bg-color: #0a192f;
+            --card-bg: #966919;
+            --text-color: #f0f0f0;
+            --nav-bg: #112240;
+            --gear-color: #d4af37;
+        }
 
-        .image-box { background: #e0e0e0; height: 250px; border-radius: 6px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; color: #777; font-weight: bold; }
+        body { 
+            font-family: 'Helvetica', Arial, sans-serif; 
+            line-height: 1.8; 
+            color: var(--text-color); 
+            background-color: var(--bg-color); 
+            margin: 0; 
+            transition: all 0.4s ease;
+        }
 
-        .secret-info { background: #1a1a1a; color: #ffffff; padding: 40px; border-radius: 8px; text-align: center; margin: 40px 0; }
+        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
+
+        /* Navigasyon Barı */
+        nav { 
+            background: var(--nav-bg); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theme-btn {
+            margin-left: 20px;
+            cursor: pointer; padding: 8px 15px;
+            background: var(--text-color); color: var(--bg-color);
+            border: none; border-radius: 5px; font-size: 11px; font-weight: bold;
+        }
+
+        .nav-logo { font-weight: bold; letter-spacing: 4px; font-size: 1.2em; text-align: center; flex-grow: 1; }
+
+        .menu-icon {
+            margin-right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        /* Kartlar ve İçerik */
+        .hero { background: var(--card-bg); padding: 80px 20px; text-align: center; border-radius: 20px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .section { background: var(--card-bg); padding: 50px; border-radius: 20px; margin: 30px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
         
-        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; }
-        .btn { display: inline-block; background: #1a1a1a; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 20px; }
+        h1 { font-size: 2.5em; letter-spacing: 2px; margin-bottom: 10px; }
+        h2 { font-size: 1.8em; border-bottom: 2px solid var(--text-color); padding-bottom: 10px; text-transform: uppercase; margin-top: 0;}
+        h3 { font-size: 1.3em; color: inherit; opacity: 0.9; margin-top: 30px; border-left: 4px solid var(--text-color); padding-left: 10px;}
+        p { font-size: 1.05em; text-align: justify; }
+
+        /* Sosyal Medya İkonları */
+        .social-links { text-align: center; margin-top: 20px; }
+        .social-links a {
+            display: inline-block; margin: 10px; color: var(--text-color);
+            text-decoration: none; font-weight: bold; border: 1px solid var(--text-color);
+            padding: 10px 20px; border-radius: 5px; transition: 0.3s;
+        }
+        .social-links a:hover { background: var(--text-color); color: var(--card-bg); }
+
+        /* Dinamik Çarklar */
+        .gear-container {
+            position: fixed; bottom: -40px; left: 50%;
+            transform: translateX(-50%);
+            display: flex; gap: -20px; opacity: 0.5; z-index: -1;
+        }
+        .gear { fill: var(--gear-color); }
+        #gear1 { width: 150px; height: 150px; }
+        #gear2 { width: 120px; height: 120px; margin-top: 50px; margin-left: -35px; }
+
+        /* Yukarı Çık Butonu */
+        #backToTop {
+            position: fixed; bottom: 40px; right: 30px;
+            background: var(--text-color); color: var(--bg-color);
+            width: 50px; height: 50px; border-radius: 50%;
+            display: none; border: none; cursor: pointer; font-size: 22px; z-index: 101;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        footer { text-align: center; padding: 80px 0 150px; color: var(--text-color); opacity: 0.7; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="container">
-        <a href="#" class="logo">KATALİST NEXUS</a>
-    </div>
+    <button class="theme-btn" onclick="toggleTheme()">TEMA DEĞİŞTİR</button>
+    <div class="nav-logo">KATALİST NEXUS</div>
+    <div class="menu-icon" title="Menü">☰</div>
 </nav>
 
 <div class="container">
-
-    <header class="hero">
-        <h1>Geleceği Kurguluyoruz</h1>
-        <p>Eskişehir'in en seçkin entelektüel ve girişimci ağı.</p>
-    </header>
+    
+    <div class="hero">
+        <h1>KATALİST NEXUS</h1>
+        <p>Eskişehir'in Entelektüel Sermaye ve Girişimcilik İstasyonu</p>
+    </div>
 
     <div class="section">
-        <div class="image-box">VİZYON GÖRSELİ</div>
-        <h2>Vizyon</h2>
-        <p>KATALİST Nexus, taklit fikirlerin ötesine geçerek Eskişehir'in genç potansiyelini gerçek girişimcilik projelerine dönüştürür. Beyin jimnastiği odaklı yaklaşımımızla, ekosistemdeki derinlik açığını kapatıyoruz.</p>
+        <h2>Girişimcilik Disiplini</h2>
+        <p>Girişimcilik, modern çağın en popüler kelimelerinden biri olsa da altı çoğu zaman boşaltılmış bir kavramdır. Gerçek girişimcilik, sadece havalı ofislerde kahve içip yatırımcı aramak değildir. Girişimcilik; mevcut bir problemi fark edip, o probleme yenilikçi, pazar uyumlu ve sürdürülebilir bir çözüm üretme sanatıdır. Statükoya karşı çıkma, belirsizliği yönetme ve kaosun içinden bir düzen yaratma sürecidir.</p>
+        
+        <h3>İnsanlar Neden Girişimci Olur?</h3>
+        <p>Geleneksel eğitim sistemi ve kurumsal hayat, insanlara "güvenli bir maaş ve sınırlı bir etki alanı" vaat eder. Ancak bazı zihinler bu sınırların içine sığamaz. İnsanlar dünyada bir değişim yaratmak, kendi vizyonlarını özgürce hayata geçirmek ve sınırları zorlamak için girişimci olurlar. Maddi kazanç her zaman denklemin bir parçasıdır ancak "değer üretme tutkusu" ve "bağımsızlık arzusu" en büyük itici güçlerdir.</p>
+
+        <h3>Motivasyon mu, Disiplin mi?</h3>
+        <p>Girişimcilik yolculuğuna çıkan herkesin sorduğu o kritik soru: "Motivasyonumu nasıl korurum?" Yanıt basittir: <b>Koruyamazsınız.</b> Motivasyon, sizi yola çıkaran o ilk kıvılcımdır; geçicidir, duygulara bağlıdır ve rüzgarın yönüne göre değişir. Sizi asıl hedefinize ulaştıracak olan şey <b>Disiplindir</b>.</p>
+        <p>Amatörler ilham gelmesini ve motive olmayı bekler. Profesyoneller ise sabah kalkıp, o gün canları hiç istemese bile yapılması gereken işi yaparlar. Başarılı bir girişimci, motivasyonun bittiği yerde disiplin sisteminin devreye girdiği kişidir. Eğer sadece motive olduğunuz günlerde çalışırsanız, rakipleriniz sizi disiplinli oldukları günlerde ezip geçerler.</p>
+        
+        <h3>Başarılı Girişimcilerin Ortak Noktaları</h3>
+        <p>Dünyayı değiştiren projelerin mimarlarına baktığımızda, belirli karakteristik özelliklerin tekrar ettiğini görürüz:</p>
+        <ul>
+            <li><b>Fikir Değil, İcraat Odaklılık (Execution):</b> Herkesin iyi bir fikri vardır. Başarılı girişimciler, o fikri hayata geçirebilen operasyonel güce sahip olanlardır. Fikir ucuzdur, icraat paha biçilemez.</li>
+            <li><b>Direnç ve Yılmazlık (Resilience):</b> Başarısızlığı bir son olarak değil, bir "veri toplama" aracı olarak görürler. Dokuz kez düşüp, onuncu kez ayağa kalkma iradesine sahiptirler.</li>
+            <li><b>Çeviklik (Agility):</b> Pazarın şartları değiştiğinde veya planlar tutmadığında, projenin yönünü anında değiştirebilirler (Pivot etme). Gemi batarken rotada inat etmezler.</li>
+            <li><b>Sürekli Öğrenme ve Merak:</b> Kendi disiplinleri dışındaki alanlardan (sanat, gastronomi, tarih, psikoloji) beslenirler. Bu multidisipliner yapı, onlara eşsiz bir vizyon katar.</li>
+            <li><b>Ego Yönetimi:</b> En iyi fikrin kendilerinden çıkmak zorunda olmadığını bilirler. Kendilerinden daha zeki insanları işe almaktan çekinmez, eleştiriye açık kalırlar.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Katalist Toplantıları</h2>
+        <p>Katalist Nexus bünyesinde gerçekleştirdiğimiz gizli ve haftalık toplantılarımız, standart "kartvizit dağıtma" etkinliklerinden tamamen farklıdır. Bu buluşmalar; <b>genel kültürünüzü artıracak</b> derin entelektüel tartışmaların yapıldığı, <b>girişimcilik ekosistemine dair en keskin içgörülerin</b> paylaşıldığı bir beyin jimnastiği merkezidir.</p>
+        <p>Katalist Nexus toplantılarına katıldığınızda sadece bir çevre (network) edinmezsiniz; sizinle aynı frekansta düşünen, fikirlerinize meydan okuyan ve sizi yukarı çeken entelektüel ortaklar bulursunuz. Burası, vizyonun projelere dönüştüğü simyacı masasıdır.</p>
     </div>
 
     <div class="section">
         <h2>Hakkımızda</h2>
-        <p>Eskişehir ekosistemindeki entelektüel boşluğu fark eden genç vizyonerler <b>Yusuf ve İsa</b> tarafından kurulmuştur. Amacımız, fikirlerin somut projelere dönüştüğü bağımsız bir platform sunmaktır.</p>
+        <p>Eskişehir ekosistemindeki entelektüel derinlik eksikliğini fark eden iki genç vizyoner, <b>Yusuf ve İsa</b> tarafından kurulmuştur. Biz, yüzeysel girişimcilik akımlarının ve taklit fikirlerin ötesine geçerek, Eskişehir'e orijinal ve bağımsız bir yapı kazandırmayı hedefliyoruz.</p>
     </div>
 
-    <div class="secret-info">
-        <h3>Gizli Toplantılar</h3>
-        <p>Ağın kalitesini korumak adına toplantı lokasyonlarımız her hafta değişmekte ve sadece onaylı üyelere gizli olarak iletilmektedir.</p>
+    <div class="section">
+        <h2 style="text-align: center;">Ağımıza Katılın</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/thenexuscorps?igsh=MWsyc2J2aHh1emVheA==" target="_blank">INSTAGRAM</a>
+            <a href="https://www.facebook.com/share/1CnTMVgB8d/" target="_blank">FACEBOOK</a>
+            <a href="https://www.linkedin.com/company/katalistnexus" target="_blank">LINKEDIN</a>
+        </div>
     </div>
-
 </div>
+
+<div class="gear-container">
+    <svg id="gear1" class="gear" viewBox="0 0 100 100">
+        <path d="M50 20c-1.1 0-2 .9-2 2v4.1c-2.4.5-4.6 1.4-6.6 2.7l-2.9-2.9c-.8-.8-2-.8-2.8 0l-4.2 4.2c-.8.8-.8 2 0 2.8l2.9 2.9c-1.3 2-2.2 4.2-2.7 6.6H22c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4.1c.5 2.4 1.4 4.6 2.7 6.6l-2.9 2.9c-.8.8-.8 2 0 2.8l4.2 4.2c.8.8 2 .8 2.8 0l2.9-2.9c2 1.3 4.2 2.2 6.6 2.7V78c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-4.1c2.4-.5 4.6-1.4 6.6-2.7l2.9 2.9c.8.8 2 .8 2.8 0l4.2-4.2c.8-.8.8-2 0-2.8l-2.9-2.9c1.3-2 2.2-4.2 2.7-6.6H78c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2h-4.1c-.5-2.4-1.4-4.6-2.7-6.6l2.9-2.9c.8-.8.8-2 0-2.8l-4.2-4.2c-.8-.8-2-.8-2.8 0l-2.9 2.9c-2-1.3-4.2-2.2-6.6-2.7V22c0-1.1-.9-2-2-2h-6zM50 40c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10 4.5-10 10-10z"></path>
+    </svg>
+    <svg id="gear2" class="gear" viewBox="0 0 100 100">
+        <path d="M50 20c-1.1 0-2 .9-2 2v4.1c-2.4.5-4.6 1.4-6.6 2.7l-2.9-2.9c-.8-.8-2-.8-2.8 0l-4.2 4.2c-.8.8-.8 2 0 2.8l2.9 2.9c-1.3 2-2.2 4.2-2.7 6.6H22c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4.1c.5 2.4 1.4 4.6 2.7 6.6l-2.9 2.9c-.8.8-.8 2 0 2.8l4.2 4.2c.8.8 2 .8 2.8 0l2.9-2.9c2 1.3 4.2 2.2 6.6 2.7V78c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-4.1c2.4-.5 4.6-1.4 6.6-2.7l2.9 2.9c.8.8 2 .8 2.8 0l4.2-4.2c.8-.8.8-2 0-2.8l-2.9-2.9c1.3-2 2.2-4.2 2.7-6.6H78c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2h-4.1c-.5-2.4-1.4-4.6-2.7-6.6l2.9-2.9c.8-.8.8-2 0-2.8l-4.2-4.2c-.8-.8-2-.8-2.8 0l-2.9 2.9c-2-1.3-4.2-2.2-6.6-2.7V22c0-1.1-.9-2-2-2h-6zM50 40c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10 4.5-10 10-10z"></path>
+    </svg>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()" title="Yukarı Çık">↑</button>
 
 <footer>
     <p>©️ 2026 KATALİST Nexus | Eskişehir</p>
-    <a href="https://www.linkedin.com/company/katalistnexus" class="btn">LinkedIn</a>
 </footer>
+
+<script>
+    // Karanlık Mod
+    function toggleTheme() {
+        const b = document.body;
+        b.getAttribute('data-theme') === 'dark' ? b.removeAttribute('data-theme') : b.setAttribute('data-theme', 'dark');
+    }
+
+    // Scroll Animasyonları
+    window.onscroll = function() {
+        const s = window.pageYOffset;
+        
+        // Çark Rotasyonu
+        document.getElementById("gear1").style.transform = `rotate(${s / 3}deg)`;
+        document.getElementById("gear2").style.transform = `rotate(-${s / 3}deg)`;
+        
+        // Yukarı Çık Butonu Görünürlüğü
+        document.getElementById("backToTop").style.display = s > 500 ? "flex" : "none";
+    };
+
+    // Sayfa Başına Dön
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
