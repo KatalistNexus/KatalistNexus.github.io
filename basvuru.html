@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikrini Ateşle | KATALİST Nexus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --accent: #555; }
+        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
+        [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --accent: #8f9779; }
+
+        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; padding: 0; transition: 0.5s; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        
+        nav { background: var(--nav-bg); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 5px; font-size: 1.5em; text-decoration:none; color:var(--text-color);}
+
+        .container { max-width: 700px; margin: 60px auto; padding: 50px; background: var(--bg-secondary); border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); position: relative; z-index: 10; }
+        h1 { font-size: 2.5em; border-bottom: 3px solid var(--text-color); padding-bottom: 15px; margin-top: 0; text-align: center; }
+        p { font-size: 1.1em; text-align: center; margin-bottom: 40px; opacity: 0.9;}
+
+        /* FORM TASARIMI */
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-family: 'Oswald', sans-serif; font-size: 1.2em; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border-radius: 5px; border: 2px solid var(--text-color); background: var(--bg-primary); color: var(--text-color); font-family: 'Roboto', sans-serif; font-size: 1.1em; box-sizing: border-box; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+        
+        button[type="submit"] { display: block; width: 100%; padding: 20px; background: var(--text-color); color: var(--bg-secondary); font-size: 1.3em; font-weight: bold; font-family: 'Oswald', sans-serif; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; transition: 0.3s; letter-spacing: 1px; }
+        button[type="submit"]:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); background: var(--accent); color: #fff;}
+
+        /* ARKAPLAN ÇARKLARI (Tema uyumu için) */
+        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.1; }
+        .gear { position: absolute; fill: var(--text-color); animation: spin 40s linear infinite; }
+        .gear-lg { width: 400px; height: 400px; top: -100px; left: -100px; }
+        .gear-md { width: 250px; height: 250px; bottom: -50px; right: -50px; animation-direction: reverse; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="bg-gears">
+    <svg class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+    <svg class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</div>
+
+<nav>
+    <a href="index.html" class="nav-logo">← KATALİST NEXUS'A DÖN</a>
+</nav>
+
+<div class="container">
+    <h1>Fikrini Sistemimize Yükle</h1>
+    <p>Katalist Nexus ağına dahil olmak için aşağıdaki kayıt formunu eksiksiz doldurun. Vizyonunuz, gizlilik politikamız gereği koruma altındadır.</p>
+    
+    <form action="YOUR_FORMSPREE_LINK" method="POST">
+        
+        <div class="form-group">
+            <label>Girişimci Kimliği (İsim Soyisim)</label>
+            <input type="text" name="isim" placeholder="Örn: Yusuf Özdemir" required>
+        </div>
+
+        <div class="form-group">
+            <label>İletişim Noktası (E-Posta)</label>
+            <input type="email" name="email" placeholder="Örn: ornek@mail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label>Fikrin Başlığı / Sektörü</label>
+            <input type="text" name="baslik" placeholder="Örn: Yapay Zeka Destekli Tarım Teknolojisi" required>
+        </div>
+
+        <div class="form-group">
+            <label>Proje Detayları ve Vizyonunuz</label>
+            <textarea name="detay" rows="6" placeholder="Problemin ne olduğunu ve sizin nasıl bir çözüm sunduğunuzu olabildiğince net açıklayın..." required></textarea>
+        </div>
+
+        <button type="submit">KATALİST AĞINA GÖNDER</button>
+    </form>
+</div>
+
+</body>
+</html>
