@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | KATALİST Nexus</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --accent: #555; }
+        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
+        [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --accent: #8f9779; }
+
+        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; transition: 0.5s; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-size: 3.5em; margin: 0; text-align: center;}
+        h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 10px; font-size: 2.2em; margin-top: 0; }
+        h3 { font-size: 1.6em; color: var(--accent); margin-top: 30px; margin-bottom: 15px;}
+        p { font-size: 1.2em; text-align: justify; margin-bottom: 25px; line-height: 1.9;}
+
+        .section { padding: 80px 20px; margin: 0; position: relative; z-index: 10; }
+        .section:nth-child(odd) { background-color: var(--bg-primary); }
+        .section:nth-child(even) { background-color: var(--bg-secondary); }
+        [data-theme="dark"] .section:nth-child(even) { color: #1a1a1a; }
+        [data-theme="dark"] .section:nth-child(even) h2, [data-theme="dark"] .section:nth-child(even) h3 { border-color: #1a1a1a; color: #1a1a1a;}
+        .content-box { max-width: 1000px; margin: 0 auto; }
+
+        nav { background: var(--nav-bg); padding: 15px 30px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 5px; font-size: 1.5em; text-decoration:none; color:var(--text-color);}
+
+        .main-logo { max-width: 250px; display: block; margin: 0 auto 30px auto; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4)); border-radius: 10px;}
+
+        .highlight-quote { font-family: 'Oswald', sans-serif; font-size: 1.8em; font-style: italic; text-align: center; padding: 40px 20px; border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); margin: 50px 0; color: var(--accent); line-height: 1.5;}
+
+        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.1; }
+        .gear { position: absolute; fill: var(--text-color); animation: spin 40s linear infinite; }
+        .gear-lg { width: 400px; height: 400px; top: -100px; left: -100px; }
+        .gear-md { width: 300px; height: 300px; bottom: 100px; right: -100px; animation-direction: reverse; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        #backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: transparent; border: none; cursor: pointer; z-index: 101; display: none; }
+        #backToTop svg { width: 100%; height: 100%; fill: var(--text-color); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="bg-gears">
+    <svg class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+    <svg class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</div>
+
+<nav>
+    <a href="index.html" class="nav-logo">← KATALİST NEXUS'A DÖN</a>
+</nav>
+
+<div class="section" style="padding-top: 40px; text-align: center;">
+    <div class="content-box">
+        <img src="logo.png" alt="KATALİST Nexus Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/300?text=LOGO'">
+        <h1>BİR VİZYONUN DOĞUŞU</h1>
+        <p style="text-align: center; font-weight: bold; font-size: 1.3em; opacity: 0.9;">Eskişehir'den Dünyaya Uzanan Kırılmaz Bir Ağ</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Kıvılcım: Ağustos 2025</h2>
+        <p>Her büyük devrim, statükoya duyulan derin bir rahatsızlıkla başlar. Eskişehir; devasa öğrenci nüfusu, dinamik yapısı ve görünürdeki kültürel zenginliğiyle bir potansiyel okyanusuydu. Ancak bu okyanus, maalesef sadece yüzeyde dalgalanıyordu. Girişimcilik adına yapılan her şey "kartvizit dağıtma" seanslarından, yüzeysel kahve sohbetlerinden ve sosyal medyada parlak unvanlar paylaşmaktan öteye gidemiyordu.</p>
+        <p>Ağustos 2025'te, bu entelektüel sığlığa ve "taklitçi" zihniyete bir son vermek üzere yola çıkıldı. Kurucu irademiz Yusuf ve İsa, farklı disiplinlerin kesişimindeki gücü fark eden iki genç vizyonerdi. Bir yanda gastronominin, 400 derecelik fırınların ve mutfak sanatlarının gerektirdiği acımasız disiplin; diğer yanda geleneksel Hat ve Naht sanatlarının gerektirdiği o milimetrik odaklanma... Onlar, "Keşke daha derinlikli, daha profesyonel bir ortam olsa" diyerek şikayet etmek yerine, o ortamı kendi elleriyle, sıfırdan ve tavizsiz kurallarla inşa etmeye karar verdiler.</p>
+        <p>İşte KATALİST Nexus, Ağustos 2025'te bu isyanın bir meyvesi olarak Eskişehir'de doğdu.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Eşi Benzeri Olmayan Bir Ekosistem</h2>
+        <p>Bugün Türkiye'de binlerce "Girişimcilik Kulübü" veya "Network Ağı" bulabilirsiniz. Çoğunun ortak noktası, herkesi içeri almaları ve havada uçuşan boş fikirlerle zaman öldürmeleridir. KATALİST Nexus ise tam anlamıyla kapalı devre, seçici ve eşi benzeri olmayan bir entelektüel şantiyedir.</p>
+        
+        <h3>Neden Benzersiziz?</h3>
+        <p>Bizler, bir fikrin tek başına hayatta kalamayacağını biliyoruz. Harika bir uygulamanın kodlarını yazabilirsiniz ama o uygulamayı satacak pazarlama dilini, finansal matematiğini ve vizyoner tasarımını kurgulayamazsanız o kodlar çöp olur. Bizim ekosistemimiz, bir mühendisin bir sanatçıyla, bir finansçının bir şefle yan yana oturduğu, disiplinler arası (multidisipliner) çarpışmaların yaşandığı bir potadır.</p>
+        <p>Ağustos 2025'ten bu yana aralıksız sürdürdüğümüz kapalı toplantılarımızda insanlara sadece "iş" değil, <b>gerçek bir network</b> kazandırdık. Bugüne kadar sayısız insan aradığı "Kurucu Ortağı" (Co-founder) bizim masalarımızda buldu. Yatırım bulmak için gereken pazar analizleri bizim kütüphanemizden beslendi. Biz insanlara bir kartvizit değil, bir zırh ve bir yol haritası veriyoruz.</p>
+
+        <div class="highlight-quote">
+            "Katalist Nexus, fikirlerin yumuşak koltuklarda pışpışlandığı bir yer değil; fikirlerin acımasızca çekiçlendiği, test edildiği ve çeliğe dönüştürüldüğü bir demirci örsüdür."
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Zirvenin Odası: "Mind Gym" Toplantıları</h2>
+        <p>Katalist Nexus bünyesinde gerçekleştirdiğimiz en stratejik ve elit operasyonumuz, dışarıya tamamen kapalı olan <b>Mind Gym (Zihin Jimnastiği)</b> toplantılarıdır.</p>
+        
+        <p>Mind Gym; bedeni değil, zihni zorlayan bir antrenman salonudur. Bu toplantılara katılmak için sadece iyi bir fikrinizin olması yetmez. Bu masaya oturacak kişilerin entelektüel derinliğe, sanata, felsefeye, teknolojiye ve sosyolojiye dair yüksek bir kültür seviyesine sahip olması; kısacası özenle seçilmiş, %1'lik bir dilimden gelmesi şarttır.</p>
+        
+        <h3>Neler Konuşuluyor?</h3>
+        <p>Mind Gym toplantılarında sıradan ekonomi haberleri tartışılmaz. Burada, "Yapay zekanın 5 yıl sonra geleneksel zanaatları nasıl yok edeceği", "Nöro-Pazarlamanın insan bilinçaltındaki 4. boyut etkileri", "Kaos teorisinin şirket yönetimindeki yeri" veya "Antik Yunan felsefesinin modern kriz yönetimine entegrasyonu" gibi ağır konular, en sert argümanlarla çarpıştırılır.</p>
+
+        <p>Egonun kapıda bırakıldığı, sadece rasyonel düşüncenin ve verinin (data) konuştuğu bu toplantılarda amaç haklı çıkmak değil, gerçeğe ulaşmaktır. Bir katılımcı masaya bir tez koyduğunda, masadaki diğer disiplinlerden gelen seçkin üyeler o tezi acımasızca "stres testine" tabi tutarlar. Eğer fikriniz Mind Gym masasından sağ çıkabiliyorsa, pazarın acımasız şartlarında kesinlikle ayakta kalacak demektir.</p>
+        <p>Biz Eskişehir'in ortasına bir şirket kurmadık; yüksek kültürün, entelektüel sermayenin ve yıkıcı inovasyonun buluştuğu bir <b>Karargah</b> kurduk. Ve bu daha sadece başlangıç.</p>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">
+    <svg viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</button>
+
+<script>
+    window.onscroll = function() {
+        const s = window.pageYOffset;
+        document.querySelectorAll('.gear').forEach((g, i) => { 
+            let dir = (i % 2 === 0) ? 1 : -1; 
+            g.style.transform = `rotate(${dir * (s / (3 + (i % 3)))}deg)`; 
+        });
+        document.getElementById("backToTop").style.display = s > 400 ? "block" : "none";
+    };
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+</script>
+
+</body>
+</html>
