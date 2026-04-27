@@ -13,7 +13,6 @@
     
     <title>KATALİST Nexus | Eskişehir</title>
     <style>
-        /* 3 TEMA SİSTEMİ (Altın rengi parlaklaştırıldı) */
         :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --gear-color: #1a1a1a; --accent: #555; }
         [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --gear-color: #d4af37; --accent: #ffcc00; }
         [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --gear-color: #2e3b32; --accent: #8f9779; }
@@ -24,7 +23,6 @@
         h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 15px; font-size: 2.5em; margin-top: 0; }
         p { font-size: 1.15em; text-align: justify; margin-bottom: 25px; }
 
-        /* SIFIR BOŞLUK (Aralıksız Bölümler) */
         .section { padding: 100px 20px; margin: 0; position: relative; z-index: 10; }
         .section:nth-child(odd) { background-color: var(--bg-primary); }
         .section:nth-child(even) { background-color: var(--bg-secondary); }
@@ -32,7 +30,6 @@
         [data-theme="dark"] .section:nth-child(even) h1, [data-theme="dark"] .section:nth-child(even) h2 { border-color: #1a1a1a; }
         .content-box { max-width: 1000px; margin: 0 auto; }
 
-        /* NAVBAR & DÜĞME (Işık Anahtarı) */
         nav { background: var(--nav-bg); padding: 15px 30px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.5s; }
         .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 5px; font-size: 1.6em; flex-grow: 1; text-align: center; }
         .menu-icon { font-size: 32px; cursor: pointer; color: var(--text-color); }
@@ -44,7 +41,6 @@
         .switch::before { content: ""; position: absolute; width: 18px; height: 18px; border-radius: 50%; background-color: var(--text-color); bottom: 3px; left: 3px; transition: 0.4s; }
         [data-theme="dark"] .switch::before { transform: translateY(-26px); background-color: var(--accent); }
 
-        /* YAN MENÜ (İsimler çıkarıldı, Sosyal Medya eklendi) */
         .sidebar { position: fixed; top: 0; right: -350px; width: 300px; height: 100vh; background: var(--bg-secondary); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 1000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px 30px; display: flex; flex-direction: column; gap: 15px; border-left: 3px solid var(--text-color); overflow-y: auto;}
         [data-theme="dark"] .sidebar { color: #1a1a1a; }
         .sidebar.active { right: 0; }
@@ -52,26 +48,21 @@
         .sidebar a, .sidebar button { font-family: 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; color: inherit; font-size: 1.1em; font-weight: 500; border-bottom: 1px solid rgba(0,0,0,0.2); padding: 15px 0; background: none; border-top:none; border-left:none; border-right:none; text-align: left; cursor: pointer; transition: 0.3s; }
         .sidebar a:hover { padding-left: 10px; color: var(--accent); }
         .highlight-btn { background: var(--text-color) !important; color: var(--bg-primary) !important; padding: 15px; text-align: center !important; border-radius: 8px; margin-bottom: 10px; display:block; text-decoration:none; font-weight:bold;}
-        
         .sidebar-contact-header { font-family: 'Oswald', sans-serif; font-size: 1.3em; font-weight: 700; margin-top: 20px; border-bottom: 2px solid; padding-bottom: 10px; color: inherit;}
 
-        /* KÜTÜPHANE BUTONU */
         .library-btn { display: inline-block; background: var(--text-color); color: var(--bg-secondary); padding: 20px 40px; font-family: 'Oswald', sans-serif; font-size: 1.4em; text-decoration: none; border-radius: 10px; margin-top: 30px; transition: 0.3s; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .library-btn:hover { transform: scale(1.05); background: var(--accent); color: #fff; }
 
-        /* 15 ÇARK SİSTEMİ */
         .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.15; }
         .gear { position: absolute; fill: var(--gear-color); transition: transform 0.1s linear; }
         .gear-lg { width: 550px; height: 550px; } .gear-md { width: 350px; height: 350px; } .gear-sm { width: 200px; height: 200px; }
         #bg-gear1 { top: -100px; left: -100px; } #bg-gear2 { top: 220px; left: 300px; } #bg-gear3 { top: -50px; left: 650px; } #bg-gear4 { top: 450px; left: -80px; } #bg-gear5 { top: 650px; left: 220px; } #bg-gear6 { top: 550px; left: 580px; } #bg-gear7 { top: 120px; right: -100px; } #bg-gear8 { bottom: -120px; left: -120px; } #bg-gear9 { bottom: 180px; left: 280px; } #bg-gear10 { bottom: -60px; left: 550px; } #bg-gear11 { bottom: 220px; right: 120px; } #bg-gear12 { top: 380px; left: 850px; } #bg-gear13 { bottom: 450px; left: 120px; } #bg-gear14 { top: 80px; left: 220px; } #bg-gear15 { bottom: 80px; right: -60px; }
 
-        /* GİZLİLİK MODALI (Kısaltılmış ve düzeltilmiş) */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; justify-content: center; align-items: center; }
         .modal { background: var(--card-bg); padding: 40px; border-radius: 15px; width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; color: var(--text-color); border: 2px solid var(--text-color); }
         [data-theme="dark"] .modal { color: #1a1a1a; }
         .modal button { background: #1a1a1a; color: #fff; padding: 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; font-size:1.1em; font-family: 'Oswald', sans-serif;}
 
-        /* FOOTER (Sadece Kısa Hakkımızda ve Konum) */
         footer { padding: 60px 20px; background: var(--nav-bg); color: var(--text-color); position: relative; z-index: 10; border-top: 3px solid var(--text-color); display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .footer-about { max-width: 600px; text-align: center; }
         .footer-about h4 { font-family: 'Oswald', sans-serif; font-size: 1.5em; margin: 0 0 10px 0; letter-spacing: 2px;}
@@ -83,7 +74,6 @@
         .privacy-btn { background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 10px 20px; font-family: 'Oswald', sans-serif; font-size: 1em; cursor: pointer; border-radius: 5px; transition: 0.3s; }
         .privacy-btn:hover { background: var(--text-color); color: var(--nav-bg); }
 
-        /* YÜZER BUTONLAR */
         #backToTop { position: fixed; bottom: 40px; right: 40px; width: 60px; height: 60px; background: transparent; border: none; cursor: pointer; z-index: 101; display: none; }
         #backToTop svg { width: 100%; height: 100%; fill: var(--text-color); filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5)); transition: 0.3s; }
         #backToTop:hover svg { transform: rotate(90deg); }
@@ -96,163 +86,4 @@
 <div class="bg-gears">
     <svg id="bg-gear1" class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
     <svg id="bg-gear2" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear3" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear4" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear5" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear6" class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear7" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear8" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear9" class="gear gear-sm" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear10" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear11" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear12" class="gear gear-sm" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear13" class="gear gear-sm" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear14" class="gear gear-sm" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-    <svg id="bg-gear15" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-</div>
-
-<nav>
-    <div class="switch-container">
-        <span class="switch-label">TEMA</span>
-        <div class="switch" onclick="cycleTheme()"></div>
-    </div>
-    <div class="nav-logo">KATALİST NEXUS</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-</nav>
-
-<div id="sideMenu" class="sidebar">
-    <div class="close-btn" onclick="toggleMenu()">✕</div>
-    
-    <a href="kutuphane.html" class="highlight-btn" style="background:var(--accent) !important; color: #fff !important;">📚 Girişimcilik Hakkında Her Şey</a>
-    <a href="test.html" class="highlight-btn">🔍 Girişimci Miyim?</a>
-    <a href="basvuru.html" class="highlight-btn">🚀 Fikrini Ateşle</a>
-    
-    <a href="#girisimci-nedir" onclick="toggleMenu()">Girişimci Nedir?</a>
-    <a href="#katalist-nedir" onclick="toggleMenu()">Katalist Nedir?</a>
-    <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda</a>
-    <a href="#vizyonumuz" onclick="toggleMenu()">Vizyonumuz</a>
-    
-    <div class="sidebar-contact-header">BİZE ULAŞIN</div>
-    <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn</a>
-    <a href="https://www.facebook.com/share/1CnTMVgB8d/" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/thenexuscorps?igsh=MWsyc2J2aHh1emVheA==" target="_blank">Instagram</a>
-    <a href="mailto:nexuskatalist@gmail.com">E-Posta Gönder</a>
-</div>
-
-<div class="section" style="text-align: center;">
-    <div class="content-box">
-        <img src="logo.png" alt="KATALİST Nexus Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/250x350.png?text=Logo'">
-        <h1>KATALİST NEXUS</h1>
-        <p style="text-align: center; font-size: 1.5em; font-weight: bold; opacity: 0.9; margin-top:10px; font-family:'Oswald', sans-serif;">Eskişehir'in Entelektüel Girişimcilik Fabrikası</p>
-        
-        <a href="kutuphane.html" class="library-btn">GİRİŞİMCİLİK HAKKINDA HER ŞEY →</a>
-    </div>
-</div>
-
-<div id="girisimci-nedir" class="section">
-    <div class="content-box">
-        <h2>Girişimci Nedir? Acımasız Bir Analiz</h2>
-        <p>Girişimcilik, modern çağın en çok suistimal edilen kelimelerinden biridir. "Girişimci" sadece bir vergi levhası sahibi olmak veya afili bir kartvizit bastırıp LinkedIn'de unvan kullanmak demek değildir. Gerçek bir girişimci; mevcut, kanayan bir problemi fark edip, bu probleme piyasanın henüz göremediği yenilikçi, inovatif ve ölçeklenebilir bir çözüm üreten kişidir.</p>
-        <p>Sıradan insanlar bir sorunla karşılaştıklarında şikayet ederler, sistemi suçlarlar. Girişimciler ise o sorunun içinde saklı olan ekonomik değeri, iyileştirme potansiyelini görürler. Statükoya meydan okumak, kuralları yıkıp daha iyisini inşa etmek onların DNA'sında vardır. Onlar dünyayı olduğu gibi değil, "olması gerektiği gibi" gören vizyonerlerdir.</p>
-        
-        <h3 style="margin-top: 30px;">Motivasyon Mu, Disiplin Mi?</h3>
-        <p>Eğer girişimcilik yolculuğunuza sadece "motive olduğunuz" günler güvenerek çıkıyorsanız, daha ilk virajda kaybettiniz demektir. Motivasyon, bir arabanın marşına basan o ilk, güçlü kıvılcımdır; ancak sizi binlerce kilometrelik hedefe, fırtınalı yollardan ulaştıracak olan şey o arabanın yakıtıdır, yani <b>Disiplindir</b>.</p>
-        <p>Gerçek girişimciler, canlarının hiç çalışmak istemediği, her şeyin ters gittiği, yatırımcıların yüzlerine kapıları kapattığı o karanlık günlerde bile masaya oturup işini yapan insanlardır. Amatörler ilham perisini bekler, modlarının yükselmesini umarlar. Profesyoneller ise sabah 6'da alarm çaldığında, bahaneleri bir kenara bırakıp ayağa kalkar. Unutmayın: Disiplin, motivasyonun bittiği yerde başlar.</p>
-
-        <h3 style="margin-top: 30px;">Başarılı Girişimcilerin Gizli Formülü</h3>
-        <ul style="font-size: 1.15em; line-height: 1.8;">
-            <li><b>Fikir Değil, İcraat (Execution) Odaklılık:</b> Mükemmel fikir diye bir şey yoktur, mükemmel icraat vardır. Dünyanın en iyi fikri, onu hayata geçirebilecek operasyonel yeteneğiniz yoksa bir hiçtir.</li>
-            <li><b>Çeviklik ve Pivot Etme Yeteneği:</b> Pazar, sizin Excel tablolarınızdaki kusursuz planlara uymak zorunda değildir. Planlar çöktüğünde veya müşteri farklı bir şey talep ettiğinde, anında yön değiştirebilenler (Pivot) hayatta kalır.</li>
-            <li><b>Yılmazlık (Resilience):</b> Reddedilmeye ve başarısızlığa olan töleransları insanüstüdür. Başarısızlığı bir son olarak değil, sadece "Bu yöntemin işe yaramadığını öğrendim" şeklinde bir akademik veri olarak okurlar.</li>
-            <li><b>Multidisipliner Merak:</b> Sadece kendi sektörlerini okumazlar. Bir yazılımcı, psikoloji kitapları okur; bir şef, mühendislik mimarisi inceler. Yenilik, farklı disiplinlerin tam kesişim noktasından doğar.</li>
-        </ul>
-    </div>
-</div>
-
-<div id="katalist-nedir" class="section">
-    <div class="content-box">
-        <h2>Katalist: Daha Önce Yapılmamış Olan</h2>
-        <p>Ağustos 2025'ten bu yana Eskişehir'de aktif olan <b>KATALİST Nexus</b>, şehrin ekosistemindeki o büyük, entelektüel boşluğu doldurmak için yaratıldı. Daha önce yapılmamış olmasının sebebi, bu tür bir ağın ciddi bir vizyon ve seçicilik gerektirmesidir. Biz sıradan bir kahve sohbeti grubu değiliz.</p>
-        <p>Bugüne kadar sayısız toplantıya, gizli buluşmaya ve derin beyin fırtınalarına imkan sağladık. Sadece girişimcilik konuşmuyoruz; sanatı, teknolojiyi, sosyolojiyi ve geleceğin trendlerini aynı masada harmanlıyoruz.</p>
-        
-        <h3 style="margin-top: 30px;">Sana Ne Katacak?</h3>
-        <p>Katalist Nexus toplantılarında sadece iş konuşulmaz, genel kültürünüz vizyoner tartışmalarla tavan yapar. Hemen hemen her konuda (gastronomiden yazılıma, tasarımdan finansa) profesyonel ve gerçek bir ağ edinebilirsiniz. Belki de yıllardır aradığınız o yetenekli kurucu ortağınız (Co-founder), haftaya yapacağımız gizli toplantıda karşınızda oturuyor olacak.</p>
-    </div>
-</div>
-
-<div id="hakkimizda" class="section">
-    <div class="content-box">
-        <h2>Hakkımızda</h2>
-        <p>Ağustos 2025'ten bu yana Eskişehir'de devrim yaratan KATALİST Nexus ağı, ekosistemin bizzat mutfağında yoğrulan ve eksikleri birinci elden tecrübe eden kurucular tarafından (Yusuf ve İsa gibi vizyonerler önderliğinde) hayata geçirilmiştir.</p>
-        <p>Birçoğu sadece vizelere çalışıp kafelerde vakit öldürürken, bu ağın kurucu iradesi piyasadaki "entelektüel sığlığı" reddederek kendi ekosistemini inşa etmeyi seçti. Eskişehir, devasa bir öğrenci nüfusuna ve potansiyele sahip olmasına rağmen, bu potansiyel basit fikirlerin ötesine geçemiyordu. Biz, o potansiyeli kinetik enerjiye çevirmek için buradayız.</p>
-        <p>Bu ağın temelinde yatan sır, çok yönlü disiplinlerden gelir.</p>
-    </div>
-</div>
-
-<div id="vizyonumuz" class="section">
-    <div class="content-box">
-        <h2>Vizyonumuz: Yeni Bir Medeniyet İnşası</h2>
-        <p>Katalist Nexus'un vizyonu, sıradan bir "kartvizit dağıtma" etkinliği veya yatırımcı kovalama platformu olmanın fersah fersah ötesindedir. Bizim vizyonumuz, Eskişehir'in gizli kalmış %1'lik entelektüel dilimini bulup çıkarmak ve onları somut, dünyayı değiştirebilecek projeler etrafında birleştirmektir.</p>
-        <p>Bir yazılımcının kodları, bir tasarımcının ruhuyla; bir finansçının matematiği, bir pazarlamacının diliyle birleştiğinde ortaya gerçek "Girişimler" çıkar. Her hafta lokasyonu gizli tutulan, sadece özel davetle girilebilen toplantılarımızda beyin fırtınaları fırtınalara dönüşür.</p>
-        <p>Katalist'e katılan bir birey, sadece bir telefon rehberi dolusu numara elde etmez. Bizim vizyonumuz, Eskişehir'den globale uzanan, kırılmaz ve entelektüel bir ağ örmektir.</p>
-    </div>
-</div>
-
-<div id="privacyModal" class="modal-overlay">
-    <div class="modal" style="max-width: 800px;">
-        <h2 style="margin-top: 0; font-size:2em; border-bottom: 2px solid; padding-bottom: 10px;">Privacy, Security & Cookies</h2>
-        <p>Katalist Nexus, web sitemizi ziyaret eden kullanıcılarımızın gizliliğine önem vermektedir. Sistem arka planımızdaki analiz araçları, size daha iyi bir kullanıcı deneyimi sunabilmek adına anonimleştirilmiş bazı verileri (çerezleri) otomatik olarak toplar.</p>
-        <p>Sitemiz üzerinden "Fikrini Ateşle" formunu doldurduğunuzda bizimle paylaştığınız tüm bilgiler güvenli sunucularda saklanır. "Girişim Fikriniz", ekosistemimizde fikri mülkiyetin ne kadar hassas bir konu olduğunun bilinciyle izniniz olmadan üçüncü şahıslarla paylaşılmaz.</p>
-        <button onclick="closePrivacyModal()">Anladım ve Kabul Ediyorum</button>
-    </div>
-</div>
-
-<a href="mailto:nexuskatalist@gmail.com" class="contact-float">✉ Bize Ulaşın</a>
-
-<button id="backToTop" onclick="scrollToTop()">
-    <svg viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
-</button>
-
-<footer>
-    <div class="footer-about">
-        <h4 style="font-family:'Oswald', sans-serif; font-size:1.6em; margin:0 0 10px 0; letter-spacing:2px;">KATALİST NEXUS HAKKINDA</h4>
-        <p style="margin:0; opacity:0.9; font-size:1.1em;">Eskişehir'in seçkin entelektüel girişimcilik ekosistemi. Dünyayı olduğu gibi değil, olması gerektiği gibi gören vizyonerlerin ve fikirlerin somut projelere dönüştüğü bağımsız bir ağ yapısıdır.</p>
-    </div>
-
-    <div class="location">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        ESKİŞEHİR, TÜRKİYE
-    </div>
-
-    <button class="privacy-btn" onclick="openPrivacyModal()">Privacy - Security - Cookies</button>
-
-    <p style="margin-top: 30px; font-family:'Oswald', sans-serif; font-size:1.3em; letter-spacing:1px;">nexuskatalist@gmail.com</p>
-    <p style="opacity: 0.6; font-family:'Oswald', sans-serif;">© 2026 KATALİST Nexus | Tüm Hakları Saklıdır.</p>
-</footer>
-
-<script>
-    const themes = ['light', 'dark', 'nature'];
-    let currentTheme = 1;
-    function cycleTheme() {
-        currentTheme = (currentTheme + 1) % themes.length;
-        document.body.setAttribute('data-theme', themes[currentTheme]);
-        if(themes[currentTheme] === 'light') { document.body.removeAttribute('data-theme'); }
-    }
-
-    function toggleMenu() { document.getElementById("sideMenu").classList.toggle("active"); }
-    function openPrivacyModal() { document.getElementById("privacyModal").style.display = "flex"; }
-    function closePrivacyModal() { document.getElementById("privacyModal").style.display = "none"; }
-
-    window.onscroll = function() {
-        const s = window.pageYOffset;
-        document.querySelectorAll('.gear').forEach((g, i) => { 
-            let dir = (i % 2 === 0) ? 1 : -1; 
-            g.style.transform = `rotate(${dir * (s / (3 + (i % 3)))}deg)`; 
-        });
-        document.getElementById("backToTop").style.display = s > 400 ? "block" : "none";
-    };
-    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-</script>
-
-</body>
-</html>
+    <svg id="bg-gear3" class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-
