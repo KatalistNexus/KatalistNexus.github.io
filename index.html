@@ -21,13 +21,15 @@
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
         h1 { font-size: 3.5em; margin: 0; }
         h2 { border-bottom: 2px solid var(--text-color); padding-bottom: 15px; font-size: 2.5em; margin-top: 0; }
+        h3 { font-size: 1.5em; color: var(--accent); margin-top: 30px; margin-bottom: 10px; }
         p { font-size: 1.15em; text-align: justify; margin-bottom: 25px; }
 
         .section { padding: 100px 20px; margin: 0; position: relative; z-index: 10; }
         .section:nth-child(odd) { background-color: var(--bg-primary); }
         .section:nth-child(even) { background-color: var(--bg-secondary); }
         [data-theme="dark"] .section:nth-child(even) { color: #1a1a1a; }
-        [data-theme="dark"] .section:nth-child(even) h1, [data-theme="dark"] .section:nth-child(even) h2 { border-color: #1a1a1a; }
+        [data-theme="dark"] .section:nth-child(even) h1, [data-theme="dark"] .section:nth-child(even) h2, [data-theme="dark"] .section:nth-child(even) h3 { border-color: #1a1a1a; color: #1a1a1a;}
+        
         .content-box { max-width: 1000px; margin: 0 auto; }
 
         nav { background: var(--nav-bg); padding: 15px 30px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.5s; }
@@ -52,6 +54,8 @@
 
         .library-btn { display: inline-block; background: var(--text-color); color: var(--bg-secondary); padding: 20px 40px; font-family: 'Oswald', sans-serif; font-size: 1.4em; text-decoration: none; border-radius: 10px; margin-top: 30px; transition: 0.3s; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .library-btn:hover { transform: scale(1.05); background: var(--accent); color: #fff; }
+        
+        .highlight-quote { font-family: 'Oswald', sans-serif; font-size: 1.8em; font-style: italic; text-align: center; padding: 40px 20px; border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); margin: 50px 0; color: var(--accent); line-height: 1.5;}
 
         .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.15; }
         .gear { position: absolute; fill: var(--gear-color); transition: transform 0.1s linear; }
@@ -113,14 +117,14 @@
 <div id="sideMenu" class="sidebar">
     <div class="close-btn" onclick="toggleMenu()">✕</div>
     
-    <a href="kutuphane.html" class="highlight-btn" style="background:var(--accent) !important; color: #fff !important;">📚 Girişimcilik Hakkında Her Şey</a>
+    <a href="kutuphane.html" class="highlight-btn" style="background:var(--accent) !important; color: #fff !important;">📚 Girişimcilik Kütüphanesi</a>
     <a href="test.html" class="highlight-btn">🔍 Girişimci Miyim?</a>
     <a href="basvuru.html" class="highlight-btn">🚀 Fikrini Ateşle</a>
     
     <a href="#girisimci-nedir" onclick="toggleMenu()">Girişimci Nedir?</a>
     <a href="#katalist-nedir" onclick="toggleMenu()">Katalist Nedir?</a>
-    <a href="hakkimizda.html" class="highlight-btn" style="background: transparent !important; color: var(--text-color) !important; border: 2px solid var(--text-color); margin-top:10px;">Hakkımızda Detaylı Bilgi</a>
     <a href="#vizyonumuz" onclick="toggleMenu()">Vizyonumuz</a>
+    <a href="#kivilcim" onclick="toggleMenu()">Hakkımızda / Vizyonun Doğuşu</a> 
     
     <div class="sidebar-contact-header">BİZE ULAŞIN</div>
     <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn</a>
@@ -176,6 +180,44 @@
         <p>Katalist Nexus'un vizyonu, sıradan bir "kartvizit dağıtma" etkinliği veya yatırımcı kovalama platformu olmanın fersah fersah ötesindedir. Bizim vizyonumuz, Eskişehir'in gizli kalmış %1'lik entelektüel dilimini bulup çıkarmak ve onları somut, dünyayı değiştirebilecek projeler etrafında birleştirmektir.</p>
         <p>Bir yazılımcının kodları, bir tasarımcının ruhuyla; bir finansçının matematiği, bir pazarlamacının diliyle birleştiğinde ortaya gerçek "Girişimler" çıkar. Her hafta lokasyonu gizli tutulan, sadece özel davetle girilebilen toplantılarımızda beyin fırtınaları fırtınalara dönüşür.</p>
         <p>Katalist'e katılan bir birey, sadece bir telefon rehberi dolusu numara elde etmez. Bizim vizyonumuz, Eskişehir'den globale uzanan, kırılmaz ve entelektüel bir ağ örmektir.</p>
+    </div>
+</div>
+
+<div id="kivilcim" class="section">
+    <div class="content-box">
+        <h2>Kıvılcım: Ağustos 2025</h2>
+        <p>Her büyük devrim, statükoya duyulan derin bir rahatsızlıkla başlar. Eskişehir; devasa öğrenci nüfusu, dinamik yapısı ve görünürdeki kültürel zenginliğiyle bir potansiyel okyanusuydu. Ancak bu okyanus, maalesef sadece yüzeyde dalgalanıyordu. Girişimcilik adına yapılan her şey "kartvizit dağıtma" seanslarından, yüzeysel kahve sohbetlerinden ve sosyal medyada parlak unvanlar paylaşmaktan öteye gidemiyordu.</p>
+        <p>Ağustos 2025'te, bu entelektüel sığlığa ve "taklitçi" zihniyete bir son vermek üzere yola çıkıldı. Kurucu irademiz, farklı disiplinlerin kesişimindeki gücü fark eden iki genç vizyonerdi. Bir yanda gastronominin, 400 derecelik fırınların ve mutfak sanatlarının gerektirdiği acımasız disiplin; diğer yanda geleneksel Hat ve Naht sanatlarının gerektirdiği o milimetrik odaklanma... "Keşke daha derinlikli, daha profesyonel bir ortam olsa" diyerek şikayet etmek yerine, o ortamı kendi elleriyle, sıfırdan ve tavizsiz kurallarla inşa etmeye karar verdiler.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Eşi Benzeri Olmayan Bir Ekosistem</h2>
+        <p>Bugün Türkiye'de binlerce "Girişimcilik Kulübü" veya "Network Ağı" bulabilirsiniz. Çoğunun ortak noktası, herkesi içeri almaları ve havada uçuşan boş fikirlerle zaman öldürmeleridir. KATALİST Nexus ise tam anlamıyla kapalı devre, seçici ve eşi benzeri olmayan bir entelektüel şantiyedir.</p>
+        
+        <h3>Neden Benzersiziz?</h3>
+        <p>Bizler, bir fikrin tek başına hayatta kalamayacağını biliyoruz. Harika bir uygulamanın kodlarını yazabilirsiniz ama o uygulamayı satacak pazarlama dilini, finansal matematiğini ve vizyoner tasarımını kurgulayamazsanız o kodlar çöp olur. Bizim ekosistemimiz, bir mühendisin bir sanatçıyla, bir finansçının bir şefle yan yana oturduğu, disiplinler arası (multidisipliner) çarpışmaların yaşandığı bir potadır.</p>
+        <p>Ağustos 2025'ten bu yana aralıksız sürdürdüğümüz kapalı toplantılarımızda insanlara sadece "iş" değil, <b>gerçek bir network</b> kazandırdık. Bugüne kadar sayısız insan aradığı "Kurucu Ortağı" (Co-founder) bizim masalarımızda buldu. Yatırım bulmak için gereken pazar analizleri bizim kütüphanemizden beslendi. Biz insanlara bir kartvizit değil, bir zırh ve bir yol haritası veriyoruz.</p>
+
+        <p style="font-family: 'Oswald', sans-serif; font-size: 1.8em; font-style: italic; text-align: center; padding: 40px 20px; border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); margin: 50px 0; color: var(--accent); line-height: 1.5;">
+            "Katalist Nexus, fikirlerin yumuşak koltuklarda pışpışlandığı bir yer değil; fikirlerin acımasızca çekiçlendiği, test edildiği ve çeliğe dönüştürüldüğü bir demirci örsüdür."
+        </p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="content-box">
+        <h2>Zirvenin Odası: "Mind Gym" Toplantıları</h2>
+        <p>Katalist Nexus bünyesinde gerçekleştirdiğimiz en stratejik ve elit operasyonumuz, dışarıya tamamen kapalı olan <b>Mind Gym (Zihin Jimnastiği)</b> toplantılarıdır.</p>
+        
+        <p>Mind Gym; bedeni değil, zihni zorlayan bir antrenman salonudur. Bu toplantılara katılmak için sadece iyi bir fikrinizin olması yetmez. Bu masaya oturacak kişilerin entelektüel derinliğe, sanata, felsefeye, teknolojiye ve sosyolojiye dair yüksek bir kültür seviyesine sahip olması; kısacası özenle seçilmiş, %1'lik bir dilimden gelmesi şarttır.</p>
+        
+        <h3>Neler Konuşuluyor?</h3>
+        <p>Mind Gym toplantılarında sıradan ekonomi haberleri tartışılmaz. Burada, "Yapay zekanın 5 yıl sonra geleneksel zanaatları nasıl yok edeceği", "Nöro-Pazarlamanın insan bilinçaltındaki 4. boyut etkileri", "Kaos teorisinin şirket yönetimindeki yeri" veya "Antik Yunan felsefesinin modern kriz yönetimine entegrasyonu" gibi ağır konular, en sert argümanlarla çarpıştırılır.</p>
+
+        <p>Egonun kapıda bırakıldığı, sadece rasyonel düşüncenin ve verinin (data) konuştuğu bu toplantılarda amaç haklı çıkmak değil, gerçeğe ulaşmaktır. Bir katılımcı masaya bir tez koyduğunda, masadaki diğer disiplinlerden gelen seçkin üyeler o tezi acımasızca "stres testine" tabi tutarlar. Eğer fikriniz Mind Gym masasından sağ çıkabiliyorsa, pazarın acımasız şartlarında kesinlikle ayakta kalacak demektir.</p>
+        <p>Biz Eskişehir'in ortasına bir şirket kurmadık; yüksek kültürün, entelektüel sermayenin ve yıkıcı inovasyonun buluştuğu bir <b>Karargah</b> kurduk. Ve bu daha sadece başlangıç.</p>
     </div>
 </div>
 
