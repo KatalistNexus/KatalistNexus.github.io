@@ -43,7 +43,8 @@
         .switch::before { content: ""; position: absolute; width: 18px; height: 18px; border-radius: 50%; background-color: var(--text-color); bottom: 3px; left: 3px; transition: 0.4s; }
         [data-theme="dark"] .switch::before { transform: translateY(-26px); background-color: var(--accent); }
 
-        .sidebar { position: fixed; top: 0; right: -350px; width: 300px; height: 100vh; background: var(--bg-secondary); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 1000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px 30px; display: flex; flex-direction: column; gap: 15px; border-left: 3px solid var(--text-color); overflow-y: auto;}
+        /* YAN MENÜ DÜZELTİLDİ (Sızıntı Engellendi) */
+        .sidebar { position: fixed; top: 0; right: -400px; width: 340px; height: 100vh; background: var(--bg-secondary); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 1000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px 30px; box-sizing: border-box; display: flex; flex-direction: column; gap: 15px; border-left: 3px solid var(--text-color); overflow-y: auto;}
         [data-theme="dark"] .sidebar { color: #1a1a1a; }
         .sidebar.active { right: 0; }
         .close-btn { align-self: flex-end; font-size: 30px; cursor: pointer; font-weight:bold; }
@@ -124,7 +125,7 @@
     <a href="#girisimci-nedir" onclick="toggleMenu()">Girişimci Nedir?</a>
     <a href="#katalist-nedir" onclick="toggleMenu()">Katalist Nedir?</a>
     <a href="#vizyonumuz" onclick="toggleMenu()">Vizyonumuz</a>
-    <a href="#kivilcim" onclick="toggleMenu()">Hakkımızda / Vizyonun Doğuşu</a> 
+    <a href="#kivilcim" onclick="toggleMenu()">Hakkımızda & Ekosistem</a> 
     
     <div class="sidebar-contact-header">BİZE ULAŞIN</div>
     <a href="https://www.linkedin.com/in/nexus-katalist-960192406/" target="_blank">LinkedIn</a>
@@ -149,11 +150,11 @@
         <p>Girişimcilik, modern çağın en çok suistimal edilen kelimelerinden biridir. "Girişimci" sadece bir vergi levhası sahibi olmak veya afili bir kartvizit bastırıp LinkedIn'de unvan kullanmak demek değildir. Gerçek bir girişimci; mevcut, kanayan bir problemi fark edip, bu probleme piyasanın henüz göremediği yenilikçi, inovatif ve ölçeklenebilir bir çözüm üreten kişidir.</p>
         <p>Sıradan insanlar bir sorunla karşılaştıklarında şikayet ederler, sistemi suçlarlar. Girişimciler ise o sorunun içinde saklı olan ekonomik değeri, iyileştirme potansiyelini görürler. Statükoya meydan okumak, kuralları yıkıp daha iyisini inşa etmek onların DNA'sında vardır. Onlar dünyayı olduğu gibi değil, "olması gerektiği gibi" gören vizyonerlerdir.</p>
         
-        <h3 style="margin-top: 30px;">Motivasyon Mu, Disiplin Mi?</h3>
+        <h3>Motivasyon Mu, Disiplin Mi?</h3>
         <p>Eğer girişimcilik yolculuğunuza sadece "motive olduğunuz" günler güvenerek çıkıyorsanız, daha ilk virajda kaybettiniz demektir. Motivasyon, bir arabanın marşına basan o ilk, güçlü kıvılcımdır; ancak sizi binlerce kilometrelik hedefe, fırtınalı yollardan ulaştıracak olan şey o arabanın yakıtıdır, yani <b>Disiplindir</b>.</p>
         <p>Gerçek girişimciler, canlarının hiç çalışmak istemediği, her şeyin ters gittiği, yatırımcıların yüzlerine kapıları kapattığı o karanlık günlerde bile masaya oturup işini yapan insanlardır. Amatörler ilham perisini bekler, modlarının yükselmesini umarlar. Profesyoneller ise sabah 6'da alarm çaldığında, bahaneleri bir kenara bırakıp ayağa kalkar. Unutmayın: Disiplin, motivasyonun bittiği yerde başlar.</p>
 
-        <h3 style="margin-top: 30px;">Başarılı Girişimcilerin Gizli Formülü</h3>
+        <h3>Başarılı Girişimcilerin Gizli Formülü</h3>
         <ul style="font-size: 1.15em; line-height: 1.8;">
             <li><b>Fikir Değil, İcraat (Execution) Odaklılık:</b> Mükemmel fikir diye bir şey yoktur, mükemmel icraat vardır. Dünyanın en iyi fikri, onu hayata geçirebilecek operasyonel yeteneğiniz yoksa bir hiçtir.</li>
             <li><b>Çeviklik ve Pivot Etme Yeteneği:</b> Pazar, sizin Excel tablolarınızdaki kusursuz planlara uymak zorunda değildir. Planlar çöktüğünde veya müşteri farklı bir şey talep ettiğinde, anında yön değiştirebilenler (Pivot) hayatta kalır.</li>
@@ -169,7 +170,7 @@
         <p>Ağustos 2025'ten bu yana Eskişehir'de aktif olan <b>KATALİST Nexus</b>, şehrin ekosistemindeki o büyük, entelektüel boşluğu doldurmak için yaratıldı. Daha önce yapılmamış olmasının sebebi, bu tür bir ağın ciddi bir vizyon ve seçicilik gerektirmesidir. Biz sıradan bir kahve sohbeti grubu değiliz.</p>
         <p>Bugüne kadar sayısız toplantıya, gizli buluşmaya ve derin beyin fırtınalarına imkan sağladık. Sadece girişimcilik konuşmuyoruz; sanatı, teknolojiyi, sosyolojiyi ve geleceğin trendlerini aynı masada harmanlıyoruz.</p>
         
-        <h3 style="margin-top: 30px;">Sana Ne Katacak?</h3>
+        <h3>Sana Ne Katacak?</h3>
         <p>Katalist Nexus toplantılarında sadece iş konuşulmaz, genel kültürünüz vizyoner tartışmalarla tavan yapar. Hemen hemen her konuda (gastronomiden yazılıma, tasarımdan finansa) profesyonel ve gerçek bir ağ edinebilirsiniz. Belki de yıllardır aradığınız o yetenekli kurucu ortağınız (Co-founder), haftaya yapacağımız gizli toplantıda karşınızda oturuyor olacak.</p>
     </div>
 </div>
@@ -185,7 +186,7 @@
 
 <div id="kivilcim" class="section">
     <div class="content-box">
-        <h2>Kıvılcım: Ağustos 2025</h2>
+        <h2>Hakkımızda & Kıvılcım: Ağustos 2025</h2>
         <p>Her büyük devrim, statükoya duyulan derin bir rahatsızlıkla başlar. Eskişehir; devasa öğrenci nüfusu, dinamik yapısı ve görünürdeki kültürel zenginliğiyle bir potansiyel okyanusuydu. Ancak bu okyanus, maalesef sadece yüzeyde dalgalanıyordu. Girişimcilik adına yapılan her şey "kartvizit dağıtma" seanslarından, yüzeysel kahve sohbetlerinden ve sosyal medyada parlak unvanlar paylaşmaktan öteye gidemiyordu.</p>
         <p>Ağustos 2025'te, bu entelektüel sığlığa ve "taklitçi" zihniyete bir son vermek üzere yola çıkıldı. Kurucu irademiz, farklı disiplinlerin kesişimindeki gücü fark eden iki genç vizyonerdi. Bir yanda gastronominin, 400 derecelik fırınların ve mutfak sanatlarının gerektirdiği acımasız disiplin; diğer yanda geleneksel Hat ve Naht sanatlarının gerektirdiği o milimetrik odaklanma... "Keşke daha derinlikli, daha profesyonel bir ortam olsa" diyerek şikayet etmek yerine, o ortamı kendi elleriyle, sıfırdan ve tavizsiz kurallarla inşa etmeye karar verdiler.</p>
     </div>
@@ -200,7 +201,7 @@
         <p>Bizler, bir fikrin tek başına hayatta kalamayacağını biliyoruz. Harika bir uygulamanın kodlarını yazabilirsiniz ama o uygulamayı satacak pazarlama dilini, finansal matematiğini ve vizyoner tasarımını kurgulayamazsanız o kodlar çöp olur. Bizim ekosistemimiz, bir mühendisin bir sanatçıyla, bir finansçının bir şefle yan yana oturduğu, disiplinler arası (multidisipliner) çarpışmaların yaşandığı bir potadır.</p>
         <p>Ağustos 2025'ten bu yana aralıksız sürdürdüğümüz kapalı toplantılarımızda insanlara sadece "iş" değil, <b>gerçek bir network</b> kazandırdık. Bugüne kadar sayısız insan aradığı "Kurucu Ortağı" (Co-founder) bizim masalarımızda buldu. Yatırım bulmak için gereken pazar analizleri bizim kütüphanemizden beslendi. Biz insanlara bir kartvizit değil, bir zırh ve bir yol haritası veriyoruz.</p>
 
-        <p style="font-family: 'Oswald', sans-serif; font-size: 1.8em; font-style: italic; text-align: center; padding: 40px 20px; border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); margin: 50px 0; color: var(--accent); line-height: 1.5;">
+        <p class="highlight-quote">
             "Katalist Nexus, fikirlerin yumuşak koltuklarda pışpışlandığı bir yer değil; fikirlerin acımasızca çekiçlendiği, test edildiği ve çeliğe dönüştürüldüğü bir demirci örsüdür."
         </p>
     </div>
