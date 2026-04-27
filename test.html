@@ -3,105 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girişimci Miyim? | KATALİST Nexus</title>
+    <title>Girişimci Analiz Testi | KATALİST Nexus</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root { --bg-primary: #d6d6d6; --bg-secondary: #f5f5dc; --text-color: #1a1a1a; --nav-bg: #c0c0c0; --accent: #555; }
-        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #b8860b; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
-        [data-theme="nature"] { --bg-primary: #1e2b22; --bg-secondary: #4a3728; --text-color: #e8e6d9; --nav-bg: #141e17; --accent: #8f9779; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: var(--text-color); background-color: var(--bg-primary); margin: 0; padding: 0; }
-        nav { background: var(--nav-bg); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .nav-logo { font-weight: bold; letter-spacing: 5px; font-size: 1.5em; text-decoration:none; color:var(--text-color);}
-        .container { max-width: 800px; margin: 60px auto; padding: 50px; background: var(--bg-secondary); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h1 { text-align: center; border-bottom: 3px solid var(--text-color); padding-bottom: 20px; font-size: 2.2em; text-transform: uppercase; }
-        .question { margin-bottom: 40px; }
-        .question p { font-weight: bold; font-size: 1.2em; }
-        .options label { display: block; padding: 15px; margin: 10px 0; background: var(--bg-primary); border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; font-size: 1.1em; }
-        .options label:hover { border-color: var(--text-color); }
-        .btn { display: block; width: 100%; padding: 20px; background: var(--text-color); color: var(--bg-primary); font-size: 1.3em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-top: 30px; transition: 0.3s; text-transform: uppercase; }
-        .btn:hover { opacity: 0.9; }
+        [data-theme="dark"] { --bg-primary: #0a192f; --bg-secondary: #0a192f; --text-color: #f0f0f0; --nav-bg: #020c1b; --accent: #ffcc00; }
+        
+        body { font-family: 'Roboto', sans-serif; color: var(--text-color); background-color: var(--bg-primary); margin: 0; transition: 0.5s; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        
+        nav { background: var(--nav-bg); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: sticky; top:0; z-index: 100;}
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 1.2em; text-decoration:none; color:var(--text-color);}
+
+        .container { max-width: 800px; margin: 40px auto; padding: 40px; position: relative; z-index: 10; }
+        
+        /* TEST EKRANI */
+        #quiz-screen { background: rgba(0,0,0,0.03); padding: 40px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.1); }
+        [data-theme="dark"] #quiz-screen { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);}
+        
+        .question-box { margin-bottom: 40px; display: none; animation: fadeIn 0.5s; }
+        .question-box.active { display: block; }
+        .question-text { font-size: 1.5em; font-family: 'Oswald', sans-serif; margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 15px; }
+        
+        .option { display: block; background: var(--bg-secondary); padding: 15px 20px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; font-size: 1.1em; font-weight: bold;}
+        [data-theme="dark"] .option { background: rgba(255,255,255,0.05); }
+        .option:hover { border-color: var(--accent); transform: translateX(5px); }
+        .option.selected { background: var(--text-color); color: var(--bg-primary); border-color: var(--text-color); }
+
+        .btn { background: var(--text-color); color: var(--bg-primary); border: none; padding: 15px 30px; font-family: 'Oswald', sans-serif; font-size: 1.2em; border-radius: 8px; cursor: pointer; transition: 0.3s; margin-top: 20px; letter-spacing: 1px; display: inline-block; text-decoration: none;}
+        .btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
+        
+        .progress-text { font-family: 'Oswald', sans-serif; opacity: 0.6; margin-bottom: 20px; font-size: 1.2em; }
+
+        /* SONUÇ EKRANI (Muazzam Profesyonel Tasarım) */
+        #result-screen { display: none; text-align: center; animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .score-circle { width: 200px; height: 200px; border-radius: 50%; border: 8px solid var(--accent); margin: 0 auto 30px auto; display: flex; justify-content: center; align-items: center; font-family: 'Oswald', sans-serif; font-size: 4em; color: var(--accent); box-shadow: 0 0 30px rgba(0,0,0,0.3); position: relative;}
+        
+        .result-title { font-size: 2.5em; border-bottom: 2px solid var(--text-color); padding-bottom: 10px; display: inline-block; margin-bottom: 20px;}
+        .result-desc { font-size: 1.2em; line-height: 1.8; text-align: justify; background: rgba(0,0,0,0.05); padding: 30px; border-radius: 10px; border-left: 5px solid var(--text-color); }
+        [data-theme="dark"] .result-desc { background: rgba(255,255,255,0.05); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        /* ARKAPLAN ÇARKLARI */
+        .bg-gears { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.1; }
+        .gear { position: absolute; fill: var(--text-color); animation: spin 30s linear infinite; }
+        .gear-lg { width: 500px; height: 500px; top: -150px; left: -150px; }
+        .gear-md { width: 350px; height: 350px; bottom: -100px; right: -100px; animation-direction: reverse; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body data-theme="dark">
+
+<div class="bg-gears">
+    <svg class="gear gear-lg" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+    <svg class="gear gear-md" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-2.8 1.2-2.8 2.8v5.8c-3.4.7-6.5 2-9.4 3.8l-4.1-4.1c-1.1-1.1-2.9-1.1-4 0l-5.9 5.9c-1.1 1.1-1.1 2.9 0 4l4.1 4.1c-1.8 2.8-3.1 6-3.8 9.4H17.8c-1.5 0-2.8 1.2-2.8 2.8v8.4c0 1.5 1.2 2.8 2.8 2.8h5.8c.7 3.4 2 6.5 3.8 9.4l-4.1 4.1c-1.1 1.1-1.1 2.9 0 4l5.9 5.9c1.1 1.1 2.9 1.1 4 0l4.1-4.1c2.8 1.8 6 3.1 9.4 3.8v5.8c0 1.5 1.2 2.8 2.8 2.8h8.4c1.5 0 2.8-1.2 2.8-2.8v-5.8c3.4-.7 6.5-2 9.4-3.8l4.1 4.1c1.1 1.1 2.9 1.1 4 0l5.9-5.9c1.1-1.1 1.1-2.9 0-4l-4.1-4.1c1.8-2.8 3.1-6 3.8-9.4h5.8c1.5 0 2.8-1.2 2.8-2.8v-8.4c0-1.5-1.2-2.8-2.8-2.8h-5.8c-.7-3.4-2-6.5-3.8-9.4l4.1-4.1c1.1-1.1 1.1-2.9 0-4l-5.9-5.9c-1.1-1.1-2.9-1.1-4 0l-4.1 4.1c-2.8-1.8-6-3.1-9.4-3.8v-5.8c0-1.5-1.2-2.8-2.8-2.8h-8.4zM50 35c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"></path></svg>
+</div>
 
 <nav>
     <a href="index.html" class="nav-logo">← KATALİST NEXUS'A DÖN</a>
 </nav>
 
 <div class="container">
-    <h1>Girişimci Miyim?</h1>
-    <p style="text-align:center; font-size: 1.2em; margin-bottom:50px;">Katalist Nexus vizyonuna uygunluğunuzu ölçmek için hazırladığımız 5 kritik soruyu yanıtlayın. Her soru 20 puan değerindedir.</p>
     
-    <form id="quizForm">
-        <div class="question">
-            <p>1. Aylarca kodladığınız/tasarladığınız bir ürünü piyasaya sürdünüz ama kimse satın almadı. İlk tepkiniz ne olur?</p>
-            <div class="options">
-                <label><input type="radio" name="q1" value="20"> A) Müşteriden anında geri bildirim alıp ürünü pazarın istediği şekilde baştan aşağı değiştiririm (Pivot).</label>
-                <label><input type="radio" name="q1" value="10"> B) Pazarlama stratejimi değiştirir, insanları ürünüme ikna etmeye çalışırım.</label>
-                <label><input type="radio" name="q1" value="0"> C) Demek ki bu sektör bana göre değilmiş der, tüm projeyi kapatır normal işime dönerim.</label>
-            </div>
+    <div id="quiz-screen">
+        <h1 style="margin-bottom: 10px;">Girişimci Zeka Analizi</h1>
+        <p style="opacity: 0.8; margin-bottom: 30px;">Bu test, zihinsel reflekslerinizi ve kriz anındaki karar alma mekanizmanızı ölçecektir. Gerçekçi olun, çünkü piyasa her zaman öyledir.</p>
+        
+        <div class="progress-text" id="progress-text">Soru 1 / 5</div>
+
+        <div class="question-box active" data-q="1">
+            <div class="question-text">1. Mükemmel bir fikriniz var ama cebinizde hiç sermaye yok. İlk hamleniz ne olur?</div>
+            <div class="option" onclick="selectOption(this, 10)">A) En ilkel ve masrafsız haliyle bir prototip (MVP) üretip hemen müşteri ararım.</div>
+            <div class="option" onclick="selectOption(this, 5)">B) Şık bir sunum dosyası hazırlar, melek yatırımcı kovalayıp fon bulmaya çalışırım.</div>
+            <div class="option" onclick="selectOption(this, 0)">C) Fikrimi kimse çalmasın diye param olana kadar sır gibi saklarım.</div>
         </div>
 
-        <div class="question">
-            <p>2. Aklınıza dünyayı değiştirecek mükemmel bir fikir geldi. Stratejiniz nedir?</p>
-            <div class="options">
-                <label><input type="radio" name="q2" value="0"> A) Fikrimi kimse çalmasın diye kimseye anlatmam, yıllarca gizli gizli mükemmelleştirmeye çalışırım.</label>
-                <label><input type="radio" name="q2" value="20"> B) Fikrin bir değeri olmadığını bilirim. Yarın sabah en ilkel haliyle (MVP) piyasada test etmeye başlarım.</label>
-                <label><input type="radio" name="q2" value="10"> C) Önce profesyonel bir şirket kurar, harika bir logo tasarlar, sonra işe başlarım.</label>
-            </div>
+        <div class="question-box" data-q="2">
+            <div class="question-text">2. Projeye başladınız ama 3 aydır kimse ürününüzü umursamıyor ve satın almıyor. Tepkiniz ne olur?</div>
+            <div class="option" onclick="selectOption(this, 0)">A) Motivasyonumu kaybederim. Demek ki insanlar kaliteli üründen anlamıyor.</div>
+            <div class="option" onclick="selectOption(this, 5)">B) Daha fazla reklam bütçesi harcar, ürünü satana kadar inat ederim.</div>
+            <div class="option" onclick="selectOption(this, 10)">C) Ürünün piyasa uyumu olmadığını kabullenir, gelen verilere göre anında yön değiştiririm (Pivot).</div>
         </div>
 
-        <div class="question">
-            <p>3. Konfor alanınız (öngörülebilir maaş, garantili bir okul/meslek) hakkında ne düşünüyorsunuz?</p>
-            <div class="options">
-                <label><input type="radio" name="q3" value="10"> A) Konfor alanımı korur, girişimciliği sadece hafta sonları hobi olarak yaparım.</label>
-                <label><input type="radio" name="q3" value="0"> B) Konfor alanı benim için her şeydir, düzenimin bozulması beni çok korkutur.</label>
-                <label><input type="radio" name="q3" value="20"> C) Konfor alanı potansiyelin mezarlığıdır. Gerekirse uykusuz ve parasız kalmayı göze alarak sınırları zorlarım.</label>
-            </div>
+        <div class="question-box" data-q="3">
+            <div class="question-text">3. Büyük bir rakip firma, sizin ürününüzün aynısını kopyaladı ve yarı fiyatına pazara sundu.</div>
+            <div class="option" onclick="selectOption(this, 10)">A) Fiyat savaşına girmem. Ürünüme, dev firmanın kopyalayamayacağı 'kişisel/benzersiz bir değer' eklerim.</div>
+            <div class="option" onclick="selectOption(this, 5)">B) Ben de kârımdan feragat edip fiyatları düşürür, kanlı bir rekabete girerim.</div>
+            <div class="option" onclick="selectOption(this, 0)">C) Hemen sosyal medyadan şikayet eder, onlara telif hakkı davası açmakla uğraşırım.</div>
         </div>
 
-        <div class="question">
-            <p>4. Motivasyonunuzu tamamen kaybettiğiniz, işlerin kötü gittiği bir günde sizi masada tutan nedir?</p>
-            <div class="options">
-                <label><input type="radio" name="q4" value="20"> A) Sarsılmaz disiplinim. Canım hiç istemese bile o gün yapılması gereken işi eksiksiz yaparım.</label>
-                <label><input type="radio" name="q4" value="0"> B) Motivasyonum yoksa çalışamam, ilham gelmesini ve modumun yükselmesini beklerim.</label>
-                <label><input type="radio" name="q4" value="10"> C) Motive edici videolar izler, kendimi gaza getirip öyle çalışmaya başlarım.</label>
-            </div>
+        <div class="question-box" data-q="4">
+            <div class="question-text">4. Girişimcilik kavramı sizin için temelde neyi ifade ediyor?</div>
+            <div class="option" onclick="selectOption(this, 0)">A) Kimsenin emri altında çalışmamak, kendi işimin patronu olmak ve rahat etmek.</div>
+            <div class="option" onclick="selectOption(this, 5)">B) Zengin olmak ve finansal özgürlüğümü olabilecek en kısa sürede kazanmak.</div>
+            <div class="option" onclick="selectOption(this, 10)">C) Pazardaki kanayan bir problemi bulup, buna ölçeklenebilir ve yıkıcı bir çözüm üretmek.</div>
         </div>
 
-        <div class="question">
-            <p>5. Kurucu Ortak (Co-founder) veya ekip ararken en çok neye dikkat edersiniz?</p>
-            <div class="options">
-                <label><input type="radio" name="q5" value="0"> A) Benimle tartışmayacak, bana itaat edecek sadık yakın arkadaşlarımı seçerim.</label>
-                <label><input type="radio" name="q5" value="10"> B) Sadece teknik becerisi yüksek olanları (örneğin en iyi kod yazanları) seçerim, karakter önemli değildir.</label>
-                <label><input type="radio" name="q5" value="20"> C) Benden daha zeki, farklı disiplinlerden gelen ve bana mantıklı argümanlarla itiraz edebilecek kişileri seçerim.</label>
-            </div>
+        <div class="question-box" data-q="5">
+            <div class="question-text">5. Kurucu ortağınız (Co-founder) son zamanlarda işleri aksatıyor, motivasyonu düştü. Ne yaparsınız?</div>
+            <div class="option" onclick="selectOption(this, 5)">A) İşler yarım kalmasın diye onun görevlerini de bir süreliğine ben üstlenirim.</div>
+            <div class="option" onclick="selectOption(this, 10)">B) Onu masaya oturtur, duygusallığı bir kenara bırakarak net bir uyarı çekerim. Düzelmezse yolları ayırırım.</div>
+            <div class="option" onclick="selectOption(this, 0)">C) Durumun düzelmesini bekler, aramızdaki dostluk bozulmasın diye konuyu erteleyebildiğim kadar ertelerim.</div>
         </div>
 
-        <button type="button" class="btn" onclick="calculateScore()">Testi Bitir ve Sonucu Analiz Et</button>
-    </form>
+        <button class="btn" id="next-btn" onclick="nextQuestion()" style="display:none;">Sıradaki Soru →</button>
+        <button class="btn" id="submit-btn" onclick="showResults()" style="display:none; background: var(--accent);">ZİHNİMİ ANALİZ ET</button>
+    </div>
+
+    <div id="result-screen">
+        <h2 style="border:none;">ANALİZ TAMAMLANDI</h2>
+        <div class="score-circle">
+            <span id="score-display">0</span><span style="font-size: 0.5em;">%</span>
+        </div>
+        
+        <div id="result-content">
+            </div>
+
+        <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
+            <a href="index.html" class="btn" style="background: transparent; border: 2px solid var(--text-color); color: var(--text-color);">Kök Merkeze Dön</a>
+            <a href="basvuru.html" class="btn" id="action-btn" style="display:none; background: var(--accent);">🚀 Fikrini Ateşle</a>
+        </div>
+    </div>
+
 </div>
 
 <script>
-    function calculateScore() {
-        let total = 0;
-        const form = document.forms["quizForm"];
-        let answered = 0;
-        for(let i=1; i<=5; i++) {
-            let q = form["q"+i];
-            for(let j=0; j<q.length; j++) {
-                if(q[j].checked) { total += parseInt(q[j].value); answered++; break; }
+    let currentQuestion = 1;
+    const totalQuestions = 5;
+    let score = 0;
+    let selectedPoints = 0;
+
+    function selectOption(element, points) {
+        // Seçimleri temizle
+        let siblings = element.parentNode.children;
+        for(let i=0; i<siblings.length; i++) {
+            if(siblings[i].classList.contains('option')) {
+                siblings[i].classList.remove('selected');
             }
         }
-        if(answered < 5) { alert("Sistemin analizi tamamlayabilmesi için lütfen tüm soruları yanıtlayın."); return; }
+        // Seçileni işaretle
+        element.classList.add('selected');
+        selectedPoints = points;
 
-        if(total >= 80) {
-            alert("Sistem Analizi: " + total + " PUAN\n\nSiz doğuştan bir 'ÖZEL GİRİŞİMCİSİNİZ'. \n\nRisk alma eşiğiniz, icraat odaklılığınız ve disiplin algınız %1'lik dilimde yer alıyor. Sizin gibi vizyonerlerin yeri tam olarak Katalist Nexus masalarıdır. Ana sayfaya dönüp bize hemen mail atın!");
-            window.location.href = "index.html";
+        // Butonları göster
+        if(currentQuestion < totalQuestions) {
+            document.getElementById('next-btn').style.display = 'inline-block';
         } else {
-            alert("Sistem Analizi: " + total + " PUAN\n\nGirişimcilik potansiyeliniz var ancak pazar gerçekleri, disiplin ve icraat konularında geleneksel yanılgılara sahipsiniz. \n\nŞimdi sizi bu eksiklerinizi yüzünüze vuracak ve vizyonunuzu sarsacak özel araştırma sayfamıza yönlendiriyoruz...");
-            window.location.href = "bilgi.html";
+            document.getElementById('submit-btn').style.display = 'inline-block';
+        }
+    }
+
+    function nextQuestion() {
+        score += selectedPoints;
+        selectedPoints = 0;
+        
+        document.querySelector(`.question-box[data-q="${currentQuestion}"]`).classList.remove('active');
+        currentQuestion++;
+        document.querySelector(`.question-box[data-q="${currentQuestion}"]`).classList.add('active');
+        
+        document.getElementById('progress-text').innerText = `Soru ${currentQuestion} / ${totalQuestions}`;
+        document.getElementById('next-btn').style.display = 'none';
+    }
+
+    function showResults() {
+        score += selectedPoints; // Son sorunun puanını ekle
+        let percentage = (score / (totalQuestions * 10)) * 100; // Yüzdelik hesapla
+
+        document.getElementById('quiz-screen').style.display = 'none';
+        document.getElementById('result-screen').style.display = 'block';
+
+        // Puan Sayma Animasyonu (Matrix tarzı)
+        let displayScore = 0;
+        let counter = setInterval(() => {
+            document.getElementById('score-display').innerText = displayScore;
+            if(displayScore >= percentage) {
+                clearInterval(counter);
+                renderVerdict(percentage);
+            }
+            displayScore++;
+        }, 20); // Sayma hızı
+    }
+
+    function renderVerdict(percentage) {
+        let contentDiv = document.getElementById('result-content');
+        let actionBtn = document.getElementById('action-btn');
+
+        if(percentage < 50) {
+            contentDiv.innerHTML = `
+                <div class="result-title" style="color: #ff4444; border-color: #ff4444;">ACIMASIZ GERÇEKLİK: SİSTEM REDDİ</div>
+                <div class="result-desc">
+                    <strong>Piyasa Sizi Yutmak Üzere...</strong> Elde edilen veriler oldukça net: Şu anki zihin yapınız, duygusal refleksleriniz ve kararlarınız bir "Girişimci" olmaktan ziyade, sistemin içinde ezilmeye mahkum bir "Hayalperest" olduğunuzu gösteriyor.<br><br>
+                    Fikrinizi saklamaya eğilimlisiniz, motivasyonunuz kırılgan ve pazarın acımasız kurallarıyla yüzleşmekten çekiniyorsunuz. Katalist Nexus ekosisteminin 400 derecelik fırınında bu zihin yapısıyla hayatta kalamazsınız. Fikir üretmeyi bırakıp, önce <strong>Kütüphane</strong> bölümümüzdeki 50 kitabı yutarak zihninizi disipline etmelisiniz.
+                </div>
+            `;
+        } 
+        else if (percentage >= 50 && percentage < 80) {
+            contentDiv.innerHTML = `
+                <div class="result-title" style="color: #ffcc00; border-color: #ffcc00;">GELİŞİME AÇIK: HAM POTANSİYEL</div>
+                <div class="result-desc">
+                    <strong>Kıvılcım Var, Ancak Ateş Eksik...</strong> Olayları analiz etme ve çözüm bulma yeteneğiniz fena değil. Piyasanın dinamiklerini anlıyorsunuz ancak kriz anında alacağınız kararlar hâlâ fazla duygusal veya standart "ders kitabı" refleksleri.<br><br>
+                    Risk almaktan çekinmiyorsunuz ama "Hesaplanmış Risk" (Calculated Risk) kavramında eksiğiniz var. Mükemmeliyetçilikle zaman kaybediyor olabilirsiniz. İyi bir kurucu ortağınız olursa harikalar yaratabilirsiniz. Nexus Kütüphanesi'ni inceleyip operasyonel zekanızı keskinleştirin.
+                </div>
+            `;
+        } 
+        else {
+            contentDiv.innerHTML = `
+                <div class="result-title" style="color: #4CAF50; border-color: #4CAF50;">SİSTEM DOĞRULAMASI: DOĞUŞTAN KATALİST</div>
+                <div class="result-desc">
+                    <strong>Aramıza Hoş Geldiniz.</strong> Cevaplarınız, duygulardan arınmış, tamamen icraat (Execution) ve veri odaklı bir Karar Alma mekanizmasına sahip olduğunuzu kanıtlıyor.<br><br>
+                    Siz fikirlerine aşık olan kör bir aşık değil; o fikirleri acımasızca piyasaya sürüp test eden, düşerse anında yön değiştiren (Pivot) bir stratejistsiniz. "Mind Gym" toplantılarımızda sizinle aynı frekanstaki zihinler oturuyor. Fikrinizi bir projeye çevirme vakti geldi. Beklemeyin.
+                </div>
+            `;
+            actionBtn.style.display = 'inline-block'; // Yüksek alanlara Fikrini Ateşle butonunu göster
         }
     }
 </script>
+
 </body>
 </html>
